@@ -2,195 +2,473 @@
    $active = "grant";
    include_once './template/header.php';
   ?> 
-                
-<!--                <div class= "grant">
-                <div class="accordion" id="accordionExample">
-                 <div class="card z-depth-0 bordered">
-                 <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                      aria-expanded="true" aria-controls="collapseOne">
-                      Natural Science
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                  data-parent="#accordionExample">
-                  <div class="card-body">
-                     <option value="" disabled selected>Engineering</option>
+ 
 
-                     <option value="1">Mechanical </option>
-              <option value="1">Chemical </option>
-              <option value="2">Electrical</option>
-              <option value="3">Civil</option>
-              <option value="2">Computer</option>
-              <option value="3">Software</option>
-                  </div>
-                </div>
-              </div>
-              <div class="card z-depth-0 bordered">
-                <div class="card-header" id="headingTwo">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Social Science
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                  <div class="card-body">
-                     <option value="" disabled selected>Social Science</option>
-                    <option value="1">Marketing</option>
-                    <option value="2">Accounting</option>
-                    <option value="3">Bussiness Administrator</option>
-                    <option value="2">Resercher</option>
-                     <option value="3">other</option>
-                  </div>
-                </div>
-                </div>
+  <?php
+  mysqli_connect("localhost","root","")or die("could not connect");
+  include_once '../controller/dbcontroller.php';
+  include_once '../controller/dbconnect.php';
 
-      </div>
-      </div>
+  
+  
+  $db=new dbcontroller();
+  $db2=new dbconnect();
+  $conn=$db2->connect();
+  
+  //collect
+//  if(isset($_POST['search'])){
+//      $searchq = $_POST['search'];
+////      $searchq = $_preg_replace("#[^0-9a-z]#i", "", $seachq);
+//     $query="SELECT * FROM searchgrant WHERE fieldname LIKE '%".$searchq."%' OR fieldid  LIKE '%".$searchq."%'";
+//     $result = mysqli_query($conn, $query);
+//      $count = mysqli_num_rows($result);
+//      
+//      if ($count == 0)
+//      {
+//          $output= 'no result to be found';
+//      }
+//      else{ 
+//          while($rows = mysqli_fetch_array($result)){
+//           $fname = $rows[1];    
+//            $fid = $rows[0]; 
+//            $output= '<div>' .$fname. '' . $fid. '</div>';
+//            $ss="<script>document.getElementById('msg').html('".$output."')</script>";
+//            
+//            echo  $output;
+//          }
+//      }
+//  }
+  //its to fitech from db, n to dispaly i use the php for each img,discription, by row
+  $query="Select * from grantdoc";
+  $result3=mysqli_query($conn,$query);
+  //this ends there
+  
+  ?>
+
+        <style>
+            .section1{
+                margin-right: 250px;
+                margin-left: 250px;
+                margin-top: 50px;
+                margin-bottom: 200px;
+                padding:50px;
+
+            }
+            .a{
+                text-color:black;
+            }
         
- 
-       -->
-      
-       
-  <style>
-      .grant{
-          widith:100;
-          height:100;
-          margin-left: 400px;
-          margin-right: 400px;
-          padding: 100px;
-      }
-  </style>
+        </style>
     </head>
-    <div class= "grant">
-<div class="accordion" id="accordionExample">
-  <div class="card z-depth-0 bordered">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Natural Science
-        </button>
-      </h5>
-    </div>
-       <div class="media">
-      <img class="d-flex mr-3" width="75px" height="75px" src="userimage.png" alt="Generic placeholder image">
-  <div class="media-body">
-      <!--<h5 class="mt-0 font-weight-bold">Engineering</a></h5>-->
-      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Engineering
-        </button>
-                 
-  </div>
-  </div>
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-      data-parent="#accordionExample">
-      <div class="card-body">
-         <option value="" disabled selected>Engineering</option>
-   <option value="1">Mechanical </option>
-  <option value="1">Chemical </option>
-  <option value="2">Electrical</option>
-  <option value="3">Civil</option>
-  <option value="2">Computer</option>
-  <option value="3">Software</option>
-      
-      
-      
+ <body>
+
+<!--                   <form action ="grant.php" method="post">
+                    
+                    <input type="text" name="search" placeholder="search by keyword">
+                    <input type="submit" value=">>>">
+                </form> -->
+
+        <!-- Section: Blog v.3 -->
+        <div class="section1">
+<section class="my-5">
+           
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">Grants</h2>
+    <!-- Section description -->
+    <p class="text-center dark-grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborumhgkjdhkgjhdfjhd</p>
+         
+        <?php while ($row=  mysqli_fetch_array($result3)):;?>
+    <!-- Grid row -->
+    <div class="row">
+  
+      <!-- Grid column -->
+      <div class="col-lg-5 col-xl-4">
+  
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+            <img class="img-fluid" src="<?php echo $row[7];?>" alt="women's in charge">
+            
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+  
       </div>
-    </div>
-  </div>
-</div>
-    </div>
-
-    
-
-      <div class= "grant">
-<div class="accordion" id="accordionExample">
-  <div class="card z-depth-0 bordered">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Medicine
-        </button>
-      </h5>
-    </div>
-       <div class="media">
-      <img class="d-flex mr-3" width="75px" height="75px" src="userimage.png" alt="Generic placeholder image">
-  <div class="media-body">
-      <!--<h5 class="mt-0 font-weight-bold">Engineering</a></h5>-->
-      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Medicine
-        </button>
-                 
-  </div>
-  </div>
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-      data-parent="#accordionExample">
-      <div class="card-body">
-         <option value="" disabled selected>Medicine</option>
-   <option value="1">clinical Nursing </option>
-  <option value="1">Midwifre </option>
-  <option value="2">Radiology</option>
-  <option value="3">Lab Technician</option>
-  <option value="2">Dental Health</option>
-  <option value="3">General Doctor</option>
-      <!--
-      
-      
--->      </div>
-      </div></div></div></div><!--
-      
--->            <div class= "grant">
-<div class="accordion" id="accordionExample">
-  <div class="card z-depth-0 bordered">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-       Computer science
-        </button>
-      </h5>
-    </div>
-       <div class="media">
-      <img class="d-flex mr-3" width="75px" height="75px" src="userimage.png" alt="Generic placeholder image">
-  <div class="media-body">
-      <!--<h5 class="mt-0 font-weight-bold">Engineering</a></h5>-->
-      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-       Computer Science
-        </button>
-                 
-  </div>
-  </div>
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-      data-parent="#accordionExample">
-      <div class="card-body">
-         <option value="" disabled selected>Computer Science</option>
-   <option value="1">Information Technology </option>
-  <option value="1">Information Science </option>
-  <option value="2">Maintainance</option>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-lg-7 col-xl-8">
+  
+        <!-- Post title -->
+        <h3 class="font-weight-bold mb-3"><strong><a href="#"><?php echo $row[2]; ?></a></strong></h3>
+        <!-- Excerpt -->
+        <p class="dark-grey-text"><?php echo $row[4]; ?></p>
+        <p> <a class="font-weight-bold"><?php echo $row[6];?></p>
+        <!-- Read more button -->
+<!--        <a class="btn  btn-light btn-md text-white-50 bg-dark" >-->
+            <a href="http://etd.aau.edu.et/handle/123456789/1658">Read more</a></a>
+<!--        
+        <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+        
+  -->
+      </div>
+      <!-- Grid column -->
+  
+<?php endwhile; ?>
   
  
+<!--  <section class="my-5">
+
+        
       
+         Grid row 
+        <div class="row">
       
-      </div>
-    </div>
-  </div>
-</div>
+           Grid column 
+          <div class="col-lg-5 col-xl-4">
+      
+             Featured image 
+            <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                <img class="img-fluid" src="<?php echo $row[7];?>" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
             </div>
- 
+      
+          </div>
+           Grid column 
+      
+           Grid column 
+          <div class="col-lg-7 col-xl-8">
+      
+             Post title 
+            <h3 class="font-weight-bold mb-3"><strong><a href="#"><?php echo $row[2]; ?></a></strong></h3>
+             Excerpt 
+            <p class="dark-grey-text"><?php echo $row[4]; ?></p>
+            <p> <a class="font-weight-bold"><?php echo $row[6];?> </p>
+             Read more button 
+            <a class="btn  btn-light btn-md text-white-50 bg-dark">
+                <a href="https://www.utoledo.edu/med/globalhealth/addisababaEthiopia.html">Read more</a></a>
+            
+            <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+            
+      
+          </div>
 
+
+<section class="my-5">
+
+        
+      
+         Grid row 
+        <div class="row">
+      
+           Grid column 
+          <div class="col-lg-5 col-xl-4">
+      
+             Featured image 
+            <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                <img class="img-fluid" src="<?php echo $row[7];?>" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+      
+          </div>
+           Grid column 
+      
+           Grid column 
+          <div class="col-lg-7 col-xl-8">
+      
+             Post title 
+            <h3 class="font-weight-bold mb-3"><strong><a href="#"><?php echo $row[2]; ?></a></h3>
+             Excerpt 
+            <p class="dark-grey-text"><?php echo $row[4]; ?></p>
+            <p> <a class="font-weight-bold"><?php echo $row[6];?> </p>
+             Read more button 
+            <a class="btn  btn-light btn-md text-white-50 bg-dark">
+                <a href="https://eacecivil.org/">Read more</a>
+            
+            <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+            
+      
+          </div>
+          //-->
+<!--        
+          <section class="my-5">
+
+        
+      
+                 Grid row 
+                <div class="row">
+              
+                   Grid column 
+                  <div class="col-lg-5 col-xl-4">
+              
+                     Featured image 
+                    <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                        <img class="img-fluid" src="../<?php echo $row[7];?>" alt="Sample image">
+                      <a>
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                  </div>
+                   Grid column 
+              
+                   Grid column 
+                  <div class="col-lg-7 col-xl-8">
+              
+                     Post title 
+                    <h3 class="font-weight-bold mb-3"><strong><a href="#"><?php echo $row[2]; ?></a></strong></h3>
+                     Excerpt 
+                    <p class="dark-grey-text"><?php echo $row[4]; ?></p>
+                     Post data 
+                    <p> <a class="font-weight-bold"><?php echo $row[6];?> </p>
+                     Read more button 
+                    <a class="btn  btn-light btn-md text-white-50 bg-dark">
+                       <a href="http://www.ethiopians.com/EthCITA.html"> Read more</a>
+                    
+                    <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                    
+              
+                  </div>
+          
+
+          
+         
+          <section class="my-5">
+
+        
+      
+                 Grid row 
+                <div class="row">
+              
+                   Grid column 
+                  <div class="col-lg-5 col-xl-4">
+              
+                     Featured image 
+                    <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                        <img class="img-fluid" src="../<?php echo $row[7];?>" alt="Sample image">
+                      <a>
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                  </div>
+                   Grid column 
+              
+                   Grid column 
+                  <div class="col-lg-7 col-xl-8">
+              
+                     Post title 
+                    <h3 class="font-weight-bold mb-3"><strong><a href="#"><?php echo $row[2]; ?></strong></h3>
+                     Excerpt 
+                    <p class="dark-grey-text"><?php echo $row[4]; ?></p>
+                     Post data 
+                    <p> <a class="font-weight-bold"><?php echo $row[6]; ?></p>
+                     Read more button 
+                    <a class="btn  btn-light btn-md text-white-50 bg-dark">
+                        <a href="https://opendocs.ids.ac.uk/opendocs/handle/123456789/996">Read more</a>
+                    
+                    <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                  
+              
+                  </div>-->
+         
+<!--          <section class="my-5">
+
+        
+      
+                 Grid row 
+                <div class="row">
+              
+                   Grid column 
+                  <div class="col-lg-5 col-xl-4">
+              
+                     Featured image 
+                    <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                        <img class="img-fluid" src="../<?php echo $row[7];?>" alt="Sample image">
+                      <a>
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                  </div>
+                   Grid column 
+              
+                   Grid column 
+                  <div class="col-lg-7 col-xl-8">
+              
+                     Post title 
+                    <h3 class="font-weight-bold mb-3"><strong><a href="#"><?php echo $row[2]; ?></strong></h3>
+                     Excerpt 
+                    <p class="dark-grey-text"><?php echo $row[4]; ?></p>
+                    <p> <a class="font-weight-bold">"><?php echo $row[6]; ?></p>
+                     Read more button 
+                    <a class="btn  btn-light btn-md text-white-50 bg-dark"></a>
+                        <a href="https://www.nature.com/news/2010/100409/full/news.2010.173.html">Read more</a>
+                   
+-->                  
+<!--                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>-->
+<!--                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>-->
+<!--                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>-->
+<!--                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>-->
+<!--                          <div class="spinner-grow text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>-->
+               
+              
+                  </div>
+       
+
+       </div>
+      </section>
+</div>
+
+
+                
+                
+                
+                <div id="msg"></div>
+                
+                
       
 
-  
-       
+ 
          <?php
        include_once './template/footer.php';
         ?> 

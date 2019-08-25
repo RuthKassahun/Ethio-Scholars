@@ -1,4 +1,5 @@
 <?php
+$output = "";
 include_once '../controller/dbcontroller.php';
 if(isset($_POST['submit'])){
 $firstname=$_POST['firstname'];
@@ -22,7 +23,8 @@ if($result=='1'){
      header("Location: landingpage.php");
 //    echo 'Indpendent Researcher Successfully signup';
   }else{
-   echo 'Please try again'; 
+//   echo 'Username already taken Please try again'; 
+      $output =  'Username already taken Please try again';
 }
 }
 ?>
@@ -72,11 +74,8 @@ a:hover{
   </style>
     </head>
     
-      <?php
-//       include_once '../MDB-Free_4.8.2/header.php';
-        ?>   
     <body>
-       <button class="button buttonback"><a href="landingpage.php">Back</a></button>
+       
         <div class="signup">
          <div class="d-flex justify-content-center"> 
        <!-- Default form register -->
@@ -122,14 +121,16 @@ a:hover{
     <!--username-->
     <input type="text" id="defaultRegisterFormUsername" class="form-control" placeholder="Username" name="username" required>
     <!-- Password -->
+    <p class="text-danger"><?php echo $output;?></p>
      </br>
      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" required>
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        At least 8 characters and 1 digit
+      
     </small>
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
    
      <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+      <p class="text-danger"><?php echo $output;?></p>
         </form>
 <!-- Default form register -->
          </div>    

@@ -1,4 +1,5 @@
 <?php
+$output='';
 include_once '../controller/dbcontroller.php';
 if(isset($_POST['submit'])){
 $companyname=$_POST['companyname'];
@@ -27,7 +28,7 @@ if($result=='1'){
        header("Location: landingpage.php"); 
 //    echo 'Enterprise Successfully signup';
   }else{
-   echo 'Please try again';
+  $output =  'Username already taken Please try again';
 } 
 }
 ?>
@@ -107,7 +108,7 @@ a{
 </head>
 
 <body>
-   <button class="button buttonback"><a href="landingpage.php">Back</a></button>
+   <!--<button class="button buttonback"><a href="landingpage.php">Back</a></button>-->
  <!-- Default form register -->
  <form class="text-center border border-light p-5" style="margin-right: 300px; margin-left: 300px; margin-top: 50px;" action="enterpriseSignup.php" method="post">
 
@@ -211,6 +212,7 @@ a{
             <div class="col">
                 <!-- First name -->
                 <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Username" name="username" required>
+              <p class="text-danger"><?php echo $output;?></p>
             </div>
             
             <div class="col">
@@ -228,6 +230,7 @@ a{
      
         <!--<button type="button" class="btn btn-blue-grey"><a href="../MDB-Free_4.8.2/home.php">SIGN UP</a></button>-->
         <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+        
         <!-- Social register -->
        
     </form>

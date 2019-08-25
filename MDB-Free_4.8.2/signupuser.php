@@ -1,4 +1,5 @@
 <?php
+$output='';
 include_once '../controller/dbcontroller.php';
 if(isset($_POST['submit'])){
 $firstname=$_POST['firstname'];
@@ -19,19 +20,19 @@ $db=new dbcontroller();
 if($result=='1'){
     $accId = $db->getId($username,$password);
    $db->usersignup($firstname,$lastname,$email,$phonenumber,$address,$location,$educationallevel,$accId);
-//        echo 'User Successfully signup';
+
     header("Location: landingpage.php");
      }else{
-   echo 'Please try again'; 
+   $output =  'Username already taken Please try again'; 
 }
 }
 ?>
- //<?php
+ <?php
 //function phpAlert($msg) {
 //   echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 //   $msg="Sucessfully login";
 //}
-//?>
+?>
 
 
 <!DOCTYPE html>
@@ -81,11 +82,9 @@ and open the template in the editor.
   </style>
     </head>
     
-      <?php
-//       include_once '../MDB-Free_4.8.2/header.php';
-        ?>   
+    
     <body>
-        <button class="button buttonback"><a href="landingpage.php">Back</a></button>
+        <!--<button class="button buttonback"><a href="landingpage.php">Back</a></button>-->
         <div class="signup">
          <div class="d-flex justify-content-center"> 
        <!-- Default form register -->
@@ -133,21 +132,21 @@ and open the template in the editor.
     <!--username-->
     <input type="text" id="defaultRegisterFormUsername" class="form-control" placeholder="Username" name="username" required>
     <!-- Password -->
+    <p class="text-danger"><?php echo $output;?></p>
      </br>
      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        At least 8 characters and 1 digit
+       
     </small>
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
      <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+       
     <!--<button class="btn btn-white" >SIGN UP</button>-->
 
    </form>
          </div>    
         </div>
-         <?php
-//       include_once '../MDB-Free_4.8.2/footer.php';
-        ?>
+      
          <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>

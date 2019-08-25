@@ -107,7 +107,7 @@ and open the template in the editor.-->
     
     <body>
             <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-white px-4">
-                <img src="./img3.jpg" height="30" class="d-inline-block align-top mr-2"
+                <img src="./ethio.PNG" height="40" class="d-inline-block align-top mr-2"
                   alt="mdb logo">
                 <a class="navbar-brand" href="#">Ethio Scholars</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
@@ -116,8 +116,9 @@ and open the template in the editor.-->
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav ml-auto">
+                     
                    <li class="nav-item <?php if($active=="home") echo "active"?>">
-                      <a class="nav-link" href="home.php">Home
+                      <a class="nav-link" href="home">Home
                       <span class="sr-only">(current)</span>
                       </a>
                   </li>
@@ -151,7 +152,7 @@ and open the template in the editor.-->
                     <div class="dropdown-menu dropdown-menu-right dropdown-default"
                       aria-labelledby="navbarDropdownMenuLink-333">
                         
-                      <a class="dropdown-item" href="#">Change Password</a>
+                      <a class="dropdown-item" href="setting.php">Change Password</a>
                       <a class="dropdown-item" href="logout.php">logout</a>
                       <!--<a class="dropdown-item" href="#">Something else here</a>-->
                     </div>

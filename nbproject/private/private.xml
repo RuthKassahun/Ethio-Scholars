@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/ethioscholars/MDB-Free_4.8.2/signupresearcher.php</file>
-            <file>file:/C:/wamp64/www/ethioscholars/MDB-Free_4.8.2/service.php</file>
-            <file>file:/C:/wamp64/www/ethioscholars/MDB-Free_4.8.2/template/header.php</file>
-            <file>file:/C:/wamp64/www/ethioscholars/controller/dbcontroller.php</file>
-            <file>file:/C:/wamp64/www/ethioscholars/MDB-Free_4.8.2/login.php</file>
-            <file>file:/C:/wamp64/www/ethioscholars/MDB-Free_4.8.2/template/footer.php</file>
-            <file>file:/C:/wamp64/www/ethioscholars/MDB-Free_4.8.2/landingpage.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/login.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/template/header.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/landingpage.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/model/updatePass.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/controller/dbcontroller.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/setting.php</file>
         </group>
     </open-files>
 </project-private>

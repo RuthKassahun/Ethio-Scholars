@@ -92,8 +92,9 @@ public function indpendentresearchersignup($firstname,$lastname,$email,$phonenum
           
         }
         public function adduser_pass($username,$password){
+            $pass=md5($password); 
          $stm= $this->conn->prepare("insert into account(username,password,role) values(?,?,'user');");
-         $stm->bind_param("ss",$username,$password);
+         $stm->bind_param("ss",$username,$pass);
          if($stm->execute()){
              return 1;
              
@@ -102,6 +103,7 @@ public function indpendentresearchersignup($firstname,$lastname,$email,$phonenum
          }
           
         }
+//      
         public function universitysignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
         $institutionphone2,$institutionphone3,$fullname,$position,$address,$email,$accId){
          $stm= $this->conn->prepare(" insert into university(institutionname,institutionemail,location,insititutionwebsite,fax,postbox,insititutionphone1,
@@ -117,8 +119,9 @@ public function indpendentresearchersignup($firstname,$lastname,$email,$phonenum
           
         }
          public function adduniversity_pass($username,$password){
+              $pass=md5($password);
          $stm= $this->conn->prepare("insert into account(username,password,role) values(?,?,'university');");
-         $stm->bind_param("ss",$username,$password);
+         $stm->bind_param("ss",$username,$pass);
          if($stm->execute()){
              return 1;
              
@@ -127,6 +130,17 @@ public function indpendentresearchersignup($firstname,$lastname,$email,$phonenum
          }
           
         }
+         public function updatepass($user,$newpass){
+              $pass=md5($newpass);
+                $stm=$this->conn->prepare("update account set password=? where username=? ");
+                $stm->bind_param("ss",$pass,$user);
+         if($stm->execute()){
+                    return 1;
+                }else{
+                    return 2;
+                }
+        
+             }
 }
 
 ?>

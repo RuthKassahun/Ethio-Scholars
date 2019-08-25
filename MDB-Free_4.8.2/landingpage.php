@@ -88,16 +88,17 @@ a:hover{
     color: darkgray;
 }
 .link{
-     margin: 650px 100px 50px 0px;
-      line-height: 2;
-      font-family: verdana;
-      padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    /*margin: 4px 2px;*/
-    cursor: pointer;
+        /*margin: 650px 100px 20px 0px;*/
+         line-height: 2;
+         font-family: verdana;
+         padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        /*margin: 4px 2px;*/
+        cursor: pointer;
+        margin-right:  50%;;
     
 }
 .service{
@@ -135,11 +136,11 @@ new WOW().init();
                     <a class="btn btn-white" style="margin-left:70px;" href="../MDB-Free_4.8.2/signupwith.php">SIGN UP</a>
                     <a class="btn btn-white" href="../MDB-Free_4.8.2/login.php">LOGIN</a>
                   </div>
-                  <div class="link">
+<!--                  <div class="link">
                   <a href="home.php">Home</a> 
                   <a class="service" href="service.php" target="_blank">Service</a> 
                   <a class="team" href="team.php" target="_blank">Team</a> 
-                  </div>
+                  </div>-->
                  
                 </div>
                 <!--Grid row-->

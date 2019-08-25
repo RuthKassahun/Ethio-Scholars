@@ -4,10 +4,10 @@
        include_once './template/header.php';
         ?>  
   
-          <div>
-            <div class="card booking-card" style="width:1200px; margin-top: 100px; margin-left: 150px;" >
+          <div class="d-flex justify-content-center">
+            <!--<div class="card booking-card" style="width:1200px;  margin-top: 100px; margin-left: 150px;" >-->
 
-              <div class="card-deck">
+            <div class="card-deck" style="margin-left: 300px; margin-right: 300px; margin-top: 100px;">
 
               <!-- Card -->
               <div class="card mb-4 ">
@@ -27,7 +27,7 @@
       <!--Title-->
       <h4 class="card-title"><center>UPLOAD</center></h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Universities and Independent researchers can upload their research papers.</p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
      
 
@@ -54,7 +54,7 @@
       <!--Title-->
       <h4 class="card-title"><center>DOWNLOAD</center></h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Enterprises and users can download any research paper they are looking for.</p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
      
     </div>
@@ -80,23 +80,27 @@
       <!--Title-->
       <h4 class="card-title"><center>GRANTS</center></h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">We offer grant opportunities for Universities and Independent researchers to finance their research.</p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
    
 
     </div>
 
   </div>
+              </div>
+              </div>
+          </div>
+  <div class="d-flex justify-content-center">
   <!-- Card -->
 
-</div>
-        </div>
+<!--</div>-->
+        <!--</div>-->
 <!-- Card deck -->
-    <div class="card booking-card" style="width:1200px; margin-top: 0px; margin-left: 150px;" >
+    <!--<div class="card booking-card" style="width:1200px; margin-top: 0px; margin-left: 150px;" >-->
 
   <!-- Card image -->
   <!-- Card deck -->
-<div class="card-deck">
+<div class="card-deck" style="margin-left: 300px; margin-right: 300px; margin-top: 20px; ">
 
   <!-- Card -->
   <div class="card mb-4">
@@ -116,7 +120,7 @@
       <!--Title-->
       <h4 class="card-title"><center>SEARCH ANY PAPER</center></h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Search for any research paper you are looking for.</p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
       
 
@@ -143,7 +147,7 @@
       <!--Title-->
       <h4 class="card-title"><center>CONNECT WITH THE RIGHT ENTERPRISE</center></h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Work together with the right enterprises and incubation centers.</p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
 
 
@@ -170,7 +174,7 @@
       <!--Title-->
       <h4 class="card-title"><center>GET RECENT REASEARCH PAPER</center></h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Get updated. Find a recent research paper from any universities and publishers.</p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
 
 

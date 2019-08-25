@@ -1,4 +1,5 @@
 <?php
+$output='';
 include_once '../controller/dbcontroller.php';
 if(isset($_POST['submit'])){
 $institutionname=$_POST['institutionname'];
@@ -26,7 +27,7 @@ if($result=='1'){
 //    echo 'University Successfully signup';
     header("Location: landingpage.php");
 }else{
-   echo 'Please try again';
+  $output =  'Username already taken Please try again';
 } 
 }
     
@@ -49,6 +50,9 @@ if($result=='1'){
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <style>
+      body{
+          padding: 2px;
+      }
     div.img {
         margin: 20px;
         border: 1px solid #ccc;
@@ -109,7 +113,7 @@ if($result=='1'){
 
 <body>
 
-    <button class="button buttonback"><a href="landingpage.php">Back</a></button>
+    <!--<button class="button buttonback"><a href="landingpage.php">Back</a></button>-->
     <form class="text-center border border-light p-5" style="margin-right: 300px; margin-left: 300px; margin-top: 50px;" action="signupuniversity.php" method="post">
 
         <p class="h4 mb-4">Sign up</p>
@@ -211,7 +215,9 @@ if($result=='1'){
             <div class="col">
                 <!-- First name -->
                 <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Username" name="username" required>
+            <p class="text-danger"><?php echo $output;?></p>
             </div>
+         
             
             <div class="col">
                     <!-- Last name -->
@@ -227,6 +233,7 @@ if($result=='1'){
      
         <!--<button type="button" class="btn btn-blue-grey"><a href="../MDB-Free_4.8.2/home.php">SIGN UP</a></button>-->
           <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+           
         <!-- Social register -->
        
     </form>
