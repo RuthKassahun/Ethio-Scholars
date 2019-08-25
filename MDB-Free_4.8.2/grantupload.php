@@ -1,6 +1,11 @@
      <?php
+<<<<<<< HEAD
       $active = "upload";
        include_once './template/header.php';
+=======
+//       $active = "upload";
+//       include_once './template/header.php';
+>>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
         ?> 
 
 

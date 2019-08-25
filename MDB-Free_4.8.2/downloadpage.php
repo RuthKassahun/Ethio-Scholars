@@ -1,8 +1,53 @@
+<<<<<<< HEAD
 
 
 
 <?php
 include ('../controller/db.php');
+=======
+<?php 
+
+//include ('inc/db.php'); 
+//
+//if(isset($_GET['dow'])){
+//    
+//    $path=$_GET['dow'];
+//    $res = mysqli_query($con,"SELECT * FROM documents WHERE path='$path'");
+//    
+//    header('Content-Type:application/octet-stream');
+//    header('Content-Disposition :attachement; filename"'.basename($path).'"');
+//    header('Content-Length : '. filesize($path));
+//    readfile($path);
+//}
+
+
+
+
+?>
+
+<?php
+
+//include ('inc/db.php'); 
+//
+//if(isset($_GET['dow'])){
+//    
+//    $path=$_GET['dow'];
+//    $res = mysqli_query($con,"SELECT * FROM documents WHERE path='$path'");
+//    
+//    header('Content-Type:application/octet-stream');
+//    header('Content-Disposition :attachement; filename"'.basename($path).'"');
+//    header('Content-Length : '. filesize($path));
+//    readfile($path);
+//}
+//
+//
+
+
+?>
+
+<?php
+include ('../control/db.php');
+>>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];
