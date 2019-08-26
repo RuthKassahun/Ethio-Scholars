@@ -14,7 +14,7 @@
 
                 <!--Card image-->
                 <div class="view overlay ">
-                    <li class="fa fa-upload  fa-6x" style="margin-left:150px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
+                    <li class="fa fa-upload  fa-6x" style="margin-left:100px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
                     <!--<img class="card-img-top" src=""  style="width: 380px; height: 240px;" >-->
                   <a href="#!">
                     <div class="mask rgba-white"></div>
@@ -41,7 +41,7 @@
 
     <!--Card image-->
     <div class="view overlay">
-        <li class="fa fa-download  fa-6x" style="margin-left:150px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" width="30px"></li>
+        <li class="fa fa-download  fa-6x" style="margin-left:100px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" width="30px"></li>
         <!--<img class="card-img-top" src="down.jpg" style="width: 380px; height: 240px;" alt="Card image cap">-->
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
@@ -67,7 +67,7 @@
 
     <!--Card image-->
     <div class="view overlay">
-        <li class="fa fa-money-check-alt  fa-6x" style="margin-left:150px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
+        <li class="fa fa-money-check-alt  fa-6x" style="margin-left:100px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
         <!--<img class="card-img-top" src="fundingpic.jpg" style="width: 380px; height: 240px;" alt="Card image cap">-->
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
@@ -107,7 +107,7 @@
 
     <!--Card image-->
     <div class="view overlay">
-        <li class="fa fa-search  fa-6x" style="margin-left:150px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
+        <li class="fa fa-search  fa-6x" style="margin-left:100px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
         <!--<img class="card-img-top" src="searchpic.jpg" style="width: 380px; height: 240px;" alt="Card image cap">-->
       <a href="#!">
         <div class="mask rgba-white"></div>
@@ -134,7 +134,7 @@
 
     <!--Card image-->
     <div class="view overlay">
-        <li class="fa fa-people-carry  fa-6x" style="margin-left:150px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
+        <li class="fa fa-people-carry  fa-6x" style="margin-left:100px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
         <!--<img class="card-img-top" src="gconnectedpic.jpg" style="width: 380px; height: 240px;" alt="Card image cap">-->
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
@@ -161,7 +161,7 @@
 
     <!--Card image-->
     <div class="view overlay">
-        <li class="fa fa-sticky-note  fa-6x" style="margin-left:150px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
+        <li class="fa fa-sticky-note  fa-6x" style="margin-left:100px;margin-bottom: 100px;margin-top: 100px; margin-right: 100px;" ></li>
         <!--<img class="card-img-top" src="recentpic.jpg" style="width: 380px; height: 240px;" alt="Card image cap">-->
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
