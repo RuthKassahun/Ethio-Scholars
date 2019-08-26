@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 
 
 
 <?php
 include ('../controller/db.php');
-=======
+?>
 <?php 
 
 //include ('inc/db.php'); 
@@ -47,7 +47,7 @@ include ('../controller/db.php');
 
 <?php
 include ('../control/db.php');
->>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
+
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];

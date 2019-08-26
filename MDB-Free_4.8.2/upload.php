@@ -1,11 +1,8 @@
      <?php
-//       $active = "upload";
-//       include_once './template/header.php';
+       $active = "upload";
+       include_once './template/header.php';
         ?>   
-<<<<<<< HEAD
-         
 
-=======
 <html>
     
     <head>
@@ -29,7 +26,7 @@
     </head>
     <body>
         
->>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
+
         <div class="upload">
          <div class="d-flex justify-content-center"> 
              
@@ -61,10 +58,7 @@
     </div>
   <!-- Email -->
   <input type="number" id="defaultContactFormPrice" class="form-control mb-4" placeholder="Price" name="price" required>
-<<<<<<< HEAD
 
-=======
->>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
 
     <div class="md-form">
         <input placeholder="Published Date" type="date" id="date-picker-example" class="form-control datepicker" name="pdate" required>
@@ -164,7 +158,7 @@ $query=  mysqli_query($con,"INSERT INTO documents (path,title,dept,desciption,pr
        
        <?php
 
-include ('../control/db.php');  
+include ('../controller/db.php');  
 
 if(isset($_POST['submit'])){
     $doc_name=$_POST['doc_name'];
@@ -221,12 +215,7 @@ $query=  mysqli_query($con,"INSERT INTO documents (path,title,dept,desciption,pr
     <input type="submit" name="submit" value="Upload">
     
 </form>-->
- <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script> 
-</body>
-       </html>
+  <?php
+        include_once './template/footer.php';
+        ?>
+   

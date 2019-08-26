@@ -1,10 +1,10 @@
 <?php
 
-<<<<<<< HEAD
+
 include ('../controller/db.php');  
-=======
+
 include ('../control/db.php');  
->>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
+
 
 $sql= "SELECT * FROM documents";
 
@@ -14,14 +14,7 @@ $res= mysqli_query($con,$sql);
 <html>
     
     <head>
-<<<<<<< HEAD
-   
-=======
-        
-   
 
-
->>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -67,11 +60,10 @@ echo '
          echo '<p>'.$desciption.'</p>';
          echo '<h5> Published date : '.$published.'</h5>';
         echo "<a href='downloadpage.php?id=".$id."'>Download</a>";
-<<<<<<< HEAD
+
          echo "<a style='margin-left:100px;' href='rating.php?id=".$id."'>Rate and Review</a>";
          echo "<a style='margin-left:100px;' href='rateuser.php?id=".$id."'>See Review/comment</a>";
-=======
->>>>>>> 79b6181a8eae0910bce4b69477120770f3353e6f
+
         echo '<hr>';
  echo' </div>
 </div>
