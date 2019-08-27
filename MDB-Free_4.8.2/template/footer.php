@@ -1,5 +1,5 @@
 
-<footer class="white-text p-5 bg-light mt-4">
+<footer class="white-text py-5 mt-3 heavy-rain-gradient">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center lighten-5 py-3" height="100%" width="100%">© 2019 Copyright:

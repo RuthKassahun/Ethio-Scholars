@@ -1,13 +1,18 @@
-
+        <?php
+          $active = "reserches";
+           include_once './template/header.php';
+          
+//           echo '<script>alert('.$paperId.')</script>';
+        ?> 
 
 <?php
 
 include ('../controller/db.php');  
+  if(isset($_GET['id'])){
+ $paperId=$_GET['id'];
 
-
-
-$sql= "SELECT * FROM rating ";
-
+$sql= "SELECT * FROM rating where paperId='".$paperId."'";
+  
 $res= mysqli_query($con,$sql);
 
  if($res){
@@ -17,37 +22,13 @@ $res= mysqli_query($con,$sql);
      echo 'Please try again';
  }
      
-
+  }
 
 ?>
-<html>
-    
-    <head>
-        
-   
-
-
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
-         
-    </head>
-    <body>
-
-
 <?php
 
 while ($row = mysqli_fetch_array($res)){
-       $username=$row[5];
+       $username=$row['5'];
          $feedback=$row['3'];
           $ratingnumber=$row['4'];
     
@@ -70,18 +51,12 @@ echo '
 </div>
 
 ';
-      // echo '<img src="'.$picpath.'" width="60" height="70" alt="cover"/>';
-    
-       
-       
-    //echo $id. "" . $name . $picpath. "<a href='download.php?id=".$id."'>Download</a><br>";
-    
- 
-
-}
+     }
 ?>
 
 
-
+ <?php
+       include_once './template/footer.php';
+        ?> 
  
  

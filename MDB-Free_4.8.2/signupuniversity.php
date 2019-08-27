@@ -25,7 +25,7 @@ if($result=='1'){
     $result=$db->universitysignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,
         $postbox,$institutionphone1,$institutionphone2,$institutionphone3,$fullname,$position,$address,$email,$accId);
 //    echo 'University Successfully signup';
-    header("Location: landingpage.php");
+    header("Location: login.php");
 }else{
   $output =  'Username already taken Please try again';
 } 
@@ -40,7 +40,7 @@ if($result=='1'){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Ethio-Scholar</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -52,6 +52,7 @@ if($result=='1'){
   <style>
       body{
           padding: 2px;
+          background-color: whitesmoke;
       }
     div.img {
         margin: 20px;
@@ -112,9 +113,8 @@ if($result=='1'){
 </head>
 
 <body>
-
-    <!--<button class="button buttonback"><a href="landingpage.php">Back</a></button>-->
-    <form class="text-center border border-light p-5" style="margin-right: 300px; margin-left: 300px; margin-top: 50px;" action="signupuniversity.php" method="post">
+    <div class="d-flex justify-content-center">
+    <form class="text-center border border-light p-5" style="margin-top: 40px; margin-bottom: 80px; background-color: white;" action="signupuniversity.php" method="post">
 
         <p class="h4 mb-4">Sign up</p>
         <fieldset>
@@ -223,23 +223,14 @@ if($result=='1'){
                     <!-- Last name -->
                     <input type="password" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Password" name="password" required>
      </div>
-<!--     <div class="col">
-             Last name 
-            <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Confirm Password">
-</div>-->
+
         </div>
     
-        <!-- Sign up button -->
-     
-        <!--<button type="button" class="btn btn-blue-grey"><a href="../MDB-Free_4.8.2/home.php">SIGN UP</a></button>-->
           <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
-           
-        <!-- Social register -->
-       
+          <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
     </form>
-    <!-- Default form register -->
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
+        </div>
+   
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>

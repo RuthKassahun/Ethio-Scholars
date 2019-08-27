@@ -20,7 +20,7 @@ $result=$db->addindpendentresearcher_pass($username,$password);
 if($result=='1'){
     $accId = $db->getId($username,$password);
    $db->indpendentresearchersignup($firstname,$lastname,$email,$phonenumber,$address,$location,$educationallevel,$accId); 
-     header("Location: landingpage.php");
+     header("Location: login.php");
 //    echo 'Indpendent Researcher Successfully signup';
   }else{
 //   echo 'Username already taken Please try again'; 
@@ -39,7 +39,7 @@ and open the template in the editor.
          <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Ethio-Scholar</title>
   <!-- Font Awesome -->
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
   <!-- Bootstrap core CSS -->
@@ -49,6 +49,9 @@ and open the template in the editor.
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <style>
+      body{
+            background-color: whitesmoke;
+            }
      .signup{
               /*width: 300px;*/
                 /*height: 100%;*/
@@ -79,7 +82,7 @@ a:hover{
         <div class="signup">
          <div class="d-flex justify-content-center"> 
        <!-- Default form register -->
-       <form class="text-center border border-light p-5" action="signupresearcher.php" method="post">
+       <form class="text-center border border-light p-5" style="background-color: white; width: 50%;" action="signupresearcher.php" method="post">
 
     <p class="h4 mb-4">Sign up</p>
 
@@ -130,7 +133,8 @@ a:hover{
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
    
      <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
-      <p class="text-danger"><?php echo $output;?></p>
+      
+      <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
         </form>
 <!-- Default form register -->
          </div>    

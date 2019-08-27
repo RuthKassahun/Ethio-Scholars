@@ -31,6 +31,15 @@ public function getId($username, $password){
         return $row['accountId'];
         
 }
+public function getPeperId($username, $password){
+         $pass=  md5($password);
+        $stm=$this->conn->prepare("select * from account where username=? and password=?");
+        $stm->bind_param("ss", $username, $pass);
+        $stm->execute();
+        $row = $stm->get_result()->fetch_assoc();
+        return $row['accountId'];
+        
+}
 public function enterprisesignup($companyname,$companyemail,$location,$companywebsite,$fax,$postbox,$companyphone1,
         $companyphone2,$companyphone3,$fullname,$position,$address,$email,$accId){
          $stm= $this->conn->prepare("insert into enterprise(companyname,companyemail,location,companywebsite,fax,postbox,companyphone1,

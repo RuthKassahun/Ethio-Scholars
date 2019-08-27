@@ -9,8 +9,6 @@
   include_once '../controller/dbcontroller.php';
   include_once '../controller/dbconnect.php';
 
-  
-  
   $db=new dbcontroller();
   $db2=new dbconnect();
   $conn=$db2->connect();
@@ -39,6 +37,7 @@
 //      }
 //  }
   //its to fitech from db, n to dispaly i use the php for each img,discription, by row
+
   $query="Select * from grantdoc";
   $result3=mysqli_query($conn,$query);
   //this ends there
@@ -59,8 +58,7 @@
             }
         
         </style>
-    </head>
- <body>
+   
 
 <!--                   <form action ="grant.php" method="post">
                     

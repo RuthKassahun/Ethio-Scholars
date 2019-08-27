@@ -1,6 +1,12 @@
      <?php
        $active = "upload";
        include_once './template/header.php';
+      
+       $accountId=$_SESSION['accountId'];
+       if($accountId==''){
+            header("Location: landingpage.php");
+       }
+       
         ?>   
          
 
@@ -10,7 +16,7 @@
              
              
        <!-- Default form contact -->
-<form class="text-center border border-light p-5" action="upload.php" method="post" enctype="multipart/form-data">
+       <form class="text-center border border-light p-5" style="background-color: white;" action="upload.php" method="post" enctype="multipart/form-data">
 
     <p class="h4 mb-4">Upload Paper</p>
 
@@ -49,22 +55,17 @@
     <label class="custom-file-label" for="inputGroupFile01" required>Choose file</label>
   </div>
 
-<div class="custom-file">
+  <div class="custom-file" style="margin-top: 20px;">
     <input type="file" class="custom-file-input" id="inputGroupFile01"
       aria-describedby="inputGroupFileAddon01" name="picfile">
     <label class="custom-file-label" for="inputGroupFile01" required>Choose Cover Image</label>
   </div>
 <br>
-<button class="btn btn-light" type="submit" name="submit">Upload</button>
-</div>
-
-    <!-- Send button -->
-    
-
+<button class="btn btn-outline-light" style="margin-top: 30px;"type="submit" name="submit">Upload</button>
 </form>
-<!-- Default form contact -->
 </div>
-       </div> 
+</div>
+       
        <?php
 
 include ('../controller/db.php');  
@@ -75,7 +76,7 @@ if(isset($_POST['submit'])){
     $desc=$_POST['desc'];
     $price=$_POST['price'];
     $pdate=$_POST['pdate'];
-    
+     
     
     $name=$_FILES['myfile']['name'];
     $tmp_name=$_FILES['myfile']['tmp_name'];
@@ -103,10 +104,10 @@ if(isset($_POST['submit'])){
         move_uploaded_file($tmp_name_pic, $locationpic);
         
        // $query=  mysqli_query($con,"INSERT INTO documents (title,path,dept,desciption,price,published) values ('$doc_name','$location','$dept','$desc','$price','$pdate')");
-$query=  mysqli_query($con,"INSERT INTO documents (path,title,dept,desciption,price,published,picpath) values ('$location','$doc_name','$dept','$desc','$price','$pdate','$locationpic')");
+$query=  mysqli_query($con,"INSERT INTO documents (path,title,dept,desciption,price,published,picpath,accId) values ('$location','$doc_name','$dept','$desc','$price','$pdate','$locationpic','$accountId')");
                 
 //header('Location:index.php');
-        echo 'Sucessfully inserted';
+        echo 'Sucessfully Uploaded';
        
        
       

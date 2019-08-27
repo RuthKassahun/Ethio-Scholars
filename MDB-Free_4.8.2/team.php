@@ -9,7 +9,7 @@
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold my-5">Our team</h2>
   <!-- Section description -->
-  <p class="grey-text w-responsive mx-auto mb-5">Ethio scholars is the frist project in ethiopia   </p>
+  <p class="grey-text w-responsive mx-auto mb-5">Ethio scholars teams </p>
 
   <!-- Grid row -->
   <div class="row">

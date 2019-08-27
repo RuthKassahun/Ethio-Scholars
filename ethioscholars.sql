@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 25, 2019 at 08:08 AM
+-- Generation Time: Aug 27, 2019 at 03:21 PM
 -- Server version: 5.7.23
--- PHP Version: 5.6.38
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,16 +36,18 @@ CREATE TABLE IF NOT EXISTS `account` (
   `role` varchar(50) NOT NULL,
   PRIMARY KEY (`accountId`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
 --
 
 INSERT INTO `account` (`accountId`, `username`, `password`, `role`) VALUES
-(22, 'sel', '123', 'indpendentresearcher'),
+(29, 'eman', 'c20ad4d76fe97759aa27a0c99bff6710', 'university'),
 (23, 'frew', 'a01610228fe998f515a72dd730294d87', 'enterprise'),
-(24, 'emann', '123', 'indpendentresearcher');
+(30, 'selam', '6032016beb0df22cc8e78d9bba9bead9', 'user'),
+(28, 'ruth', '827ccb0eea8a706c4c34a16891f84e7b', 'user'),
+(31, 'yalemzewud', '1b14c9f044b5ddf0492092d8ce1c8807', 'indpendentresearcher');
 
 -- --------------------------------------------------------
 
@@ -63,21 +65,25 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `price` int(11) NOT NULL,
   `published` date DEFAULT NULL,
   `picpath` varchar(100) NOT NULL,
+  `accId` int(11) NOT NULL,
   PRIMARY KEY (`paperid`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `documents`
 --
 
-INSERT INTO `documents` (`paperid`, `path`, `title`, `dept`, `desciption`, `price`, `published`, `picpath`) VALUES
-(33, 'doc/under world.docx', 'Born a crime', 'computer science', 'Big companies save time with Slack by securely collaborating across teams, departments, offices and countries.', 200, '2019-08-06', 'imag/covers (72).jpg'),
-(32, 'doc/The_Island_of_Doctor_Moreau_NT.pdf', 'Research studies ', 'computer science', '4000+ UI elements, including 2000+ premium components, detailed documentation, 20+ ready to use templates, 50+ dedicated sections and more! Discover full power and possibilities of the most trusted UI Kit on the world.', 200, '2019-08-21', 'imag/covers (209).jpg'),
-(31, 'doc/Around_the_World_in_80_Days_NT.pdf', 'Paper', 'enginnering', 'Eman Published a paper', 200, '2019-08-25', 'imag/covers (219).jpg'),
-(30, 'doc/under world.docx', 'Documents', 'computer science', 'Efcgvbhnjmkl,kjhgfd', 200, '2019-08-09', 'imag/covers (199).jpg'),
-(29, 'doc/Vol 2 - The Chamber of Secrets.pdf', 'Documents', 'social science', 'jhbvkjwen', 200, '2019-08-06', 'imag/covers (122).jpg'),
-(35, 'doc/04.pdf', 'research', 'enginnering', 'this must be inserted', 200, '2019-08-22', 'imag/cover_6.jpg'),
-(38, 'doc/03 Perfect - Sara Shepard.pdf', 'SDN', 'enginnering', 'SDN based data center', 500, '2019-08-22', 'imag/covers (6).jpg');
+INSERT INTO `documents` (`paperid`, `path`, `title`, `dept`, `desciption`, `price`, `published`, `picpath`, `accId`) VALUES
+(33, 'doc/under world.docx', 'Born a crime', 'computer science', 'Big companies save time with Slack by securely collaborating across teams, departments, offices and countries.', 200, '2019-08-06', 'imag/covers (72).jpg', 0),
+(32, 'doc/The_Island_of_Doctor_Moreau_NT.pdf', 'Research studies ', 'computer science', '4000+ UI elements, including 2000+ premium components, detailed documentation, 20+ ready to use templates, 50+ dedicated sections and more! Discover full power and possibilities of the most trusted UI Kit on the world.', 200, '2019-08-21', 'imag/covers (209).jpg', 0),
+(31, 'doc/Around_the_World_in_80_Days_NT.pdf', 'Paper', 'enginnering', 'Eman Published a paper', 200, '2019-08-25', 'imag/covers (219).jpg', 0),
+(30, 'doc/under world.docx', 'Documents', 'computer science', 'Efcgvbhnjmkl,kjhgfd', 200, '2019-08-09', 'imag/covers (199).jpg', 0),
+(40, 'doc/05 Wicked - Sara Shepard.pdf', 'paper', 'enginnering', 'dftyuio', 354, '2019-08-03', 'imag/covers (17).jpg', 0),
+(29, 'doc/Vol 2 - The Chamber of Secrets.pdf', 'Documents', 'social science', 'jhbvkjwen', 200, '2019-08-06', 'imag/covers (122).jpg', 0),
+(35, 'doc/04.pdf', 'research', 'enginnering', 'this must be inserted', 200, '2019-08-22', 'imag/cover_6.jpg', 0),
+(38, 'doc/03 Perfect - Sara Shepard.pdf', 'SDN', 'enginnering', 'SDN based data center', 500, '2019-08-22', 'imag/covers (6).jpg', 0),
+(39, 'doc/05 Wicked - Sara Shepard.pdf', 'paper', 'enginnering', 'dftyuio', 354, '2019-08-03', 'imag/covers (17).jpg', 0),
+(41, 'doc/04 Unbelievable - Sara Shepard.pdf', 'research', 'enginnering', 'dsfdssssssssss', 321, '2019-08-17', 'imag/cover_2.jpg', 29);
 
 -- --------------------------------------------------------
 
@@ -164,13 +170,14 @@ CREATE TABLE IF NOT EXISTS `indpendentresearcher` (
   `accId` int(10) DEFAULT NULL,
   PRIMARY KEY (`indpendentresearcherid`),
   KEY `accId` (`accId`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `indpendentresearcher`
 --
 
 INSERT INTO `indpendentresearcher` (`indpendentresearcherid`, `firstname`, `lastname`, `email`, `phonenumber`, `address`, `location`, `educationallevel`, `accId`) VALUES
+(11, 'Dr. Yalemzewud', 'Zewude', 'yalemzewudie@gmail.com', '+251922420131', 'Addiss Abeba', '5 kilo', 'PHD', 31),
 (10, 'eman', 'Hashim', 'emanhashim42@gmail.com', '0922420131', 'addiss', '5 kilo', 'Assistance Professor', 24),
 (9, 'netsanet', 'hkjlo', 'anansh.mami@gmail.com', '0922420131', 'addiss', '5 kilo', 'Assistance Professor', NULL),
 (8, 'nmnm', 'hkjlo', 'q3reeter7@gmail.com', '+251922420131', 'AA', '5 kilo', 'Assistance Professor', 22);
@@ -188,24 +195,39 @@ CREATE TABLE IF NOT EXISTS `rating` (
   `paperId` int(10) NOT NULL,
   `feedback` varchar(50) NOT NULL,
   `ratingnumber` varchar(30) NOT NULL,
-  `username` varchar(30) NOT NULL,
+  `username` varchar(50) NOT NULL,
   PRIMARY KEY (`ratingid`),
   KEY `accId` (`accId`),
-  KEY `paperId` (`paperId`),
-  KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  KEY `paperId` (`paperId`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rating`
 --
 
 INSERT INTO `rating` (`ratingid`, `accId`, `paperId`, `feedback`, `ratingnumber`, `username`) VALUES
-(1, 22, 23, 'sadsdsas', '4', 'sel'),
-(2, 23, 26, 'zsxdcfvg', '3', 'sel'),
-(3, 23, 26, 'sxd cfvgbhnjkolp;', '4', 'sel'),
-(4, 23, 26, 'swedrftgyujiolkjhgfddfghjklkjhgfcd', '4', 'sel'),
-(5, 23, 26, 'Best paper', '5', 'sel'),
-(6, 23, 26, 'not bad', '3', 'sel');
+(1, 22, 23, 'sadsdsas', '4', ''),
+(2, 23, 26, 'zsxdcfvg', '3', ''),
+(3, 23, 26, 'sxd cfvgbhnjkolp;', '4', ''),
+(4, 23, 26, 'swedrftgyujiolkjhgfddfghjklkjhgfcd', '4', ''),
+(5, 23, 26, 'Best paper', '5', ''),
+(6, 23, 26, 'not bad', '3', ''),
+(7, 23, 26, 'rtyuio', '4', ''),
+(8, 23, 26, '', '', ''),
+(9, 23, 26, 'rftgyhuji', '4', ''),
+(10, 23, 26, '', '', ''),
+(11, 23, 26, 'Good paper', '4', ''),
+(12, 23, 26, 'nice paper', '4', ''),
+(13, 30, 33, 'good', '4', 'selam'),
+(14, 30, 32, 'nice one', '3', 'selam'),
+(15, 28, 33, 'Excellent work', '5', 'ruth'),
+(16, 28, 30, 'I like it!', '', 'ruth'),
+(17, 30, 32, 'not bad', '2', 'selam'),
+(18, 30, 32, 'Excellent Work.', '5', 'selam'),
+(19, 30, 32, 'Nice paper', '3', 'selam'),
+(20, 30, 33, '', '', 'selam'),
+(21, 30, 33, '4 sibeza new gin, beka setewachu', '4', 'selam'),
+(22, 30, 33, 'nice', '3', 'selam');
 
 -- --------------------------------------------------------
 
@@ -256,7 +278,14 @@ CREATE TABLE IF NOT EXISTS `university` (
   `accId` int(10) DEFAULT NULL,
   PRIMARY KEY (`universityid`),
   KEY `accId` (`accId`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `university`
+--
+
+INSERT INTO `university` (`universityid`, `institutionname`, `institutionemail`, `location`, `insititutionwebsite`, `fax`, `postbox`, `insititutionphone1`, `insititutionphone2`, `insititutionphone3`, `fullname`, `position`, `address`, `email`, `accId`) VALUES
+(5, 'Addiss Abeba', 'anansh.mami@gmail.com', '5 kilo', 'wwwaddisabeba', 'dgg', 'wertyu', 345467, 2324567, 6789, 'hewan', 'manager', 'AA', 'emanhashim42@gmail.com', 29);
 
 -- --------------------------------------------------------
 
@@ -277,7 +306,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `accId` int(10) DEFAULT NULL,
   PRIMARY KEY (`userid`),
   KEY `accId` (`accId`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userid`, `firstname`, `lastname`, `email`, `phonenumber`, `address`, `location`, `educationallevel`, `accId`) VALUES
+(6, 'Ruth', 'Kahli', 'emanhashim42@gmail.com', 357787, 'tjh;ro', 'sdyt', '', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -21,7 +21,7 @@ if($result=='1'){
     $accId = $db->getId($username,$password);
    $db->usersignup($firstname,$lastname,$email,$phonenumber,$address,$location,$educationallevel,$accId);
 
-    header("Location: landingpage.php");
+    header("Location: login.php");
      }else{
    $output =  'Username already taken Please try again'; 
 }
@@ -46,7 +46,7 @@ and open the template in the editor.
          <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Ethio-Scholar</title>
   <!-- Font Awesome -->
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
   <!-- Bootstrap core CSS -->
@@ -56,6 +56,9 @@ and open the template in the editor.
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <style>
+      body{
+          background-color: whitesmoke;
+      }
      .signup{
               /*width: 300px;*/
                 /*height: 100%;*/
@@ -89,7 +92,7 @@ and open the template in the editor.
          <div class="d-flex justify-content-center"> 
        <!-- Default form register -->
        <form></form>
-       <form action="signupuser.php" method="post" class="text-center border border-light p-5">
+       <form action="signupuser.php" style="background-color: white; width: 50%;"method="post" class="text-center border border-light p-5">
 
     <p class="h4 mb-4">Sign up</p>
 
@@ -139,10 +142,9 @@ and open the template in the editor.
        
     </small>
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
-     <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+     <button class="btn btn-white" style="margin-top: 30px;"type="submit" name="submit">SIGN UP</button>
+      <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
        
-    <!--<button class="btn btn-white" >SIGN UP</button>-->
-
    </form>
          </div>    
         </div>

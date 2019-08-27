@@ -2,6 +2,8 @@
 <?php 
     session_start();
     $role = $_SESSION['role'];
+    $username=$_SESSION['username'];
+    
 ?>
 <!DOCTYPE html>
 
@@ -14,7 +16,10 @@ and open the template in the editor.-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Material Design Bootstrap</title>
+        <title>Ethio-Scholar</title>
+        <!--how to add logo-->
+        <link rel="icon" type="image/png" href="logo.PNG"/>
+    
          <!--Font Awesome--> 
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
          <!--Bootstrap core CSS--> 
@@ -24,12 +29,18 @@ and open the template in the editor.-->
          <!--Your custom styles (optional)--> 
         <link href="css/style.css" rel="stylesheet">
         <style>
+            body{
+                background-color: white;
+                /*color: white;*/
+            }
         .navbar{
                padding-top: 35px;
                padding-bottom:35px; 
+               
             }
         .navbar .nav-item{
                 margin-right: 10px;
+                color: black;
           
             }
         .navbar .nav-link{
@@ -38,11 +49,13 @@ and open the template in the editor.-->
                 color: black;
             }
             .active{
-                background: gray;
+                /*background: #e65100;*/
+                background: transparent;
+                border-color: black;
                 border-radius: 4px;
             }
             .active .nav-link{
-                 color: white !important;
+                 color: black !important;
             }
             div.img {
                 margin: 20px;
@@ -99,64 +112,89 @@ and open the template in the editor.-->
            /*margin: 0px 40px 60px 20px;*/
            padding: 30px;
       }
+      .logo-img{
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+      }
 /*      img {
     border-radius: 50%;
 }*/
+
+     
         </style>
     </head>
     
     <body>
-            <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-white px-4">
-                <img src="./ethio.PNG" height="40" class="d-inline-block align-top mr-2"
+            <nav class="mb-1 navbar navbar-expand-lg navbar-light cloudy-knoxville-gradient px-4">
+                <img src="./logo.PNG" height="40" class="d-inline-block align-top mr-2 logo-img"
                   alt="mdb logo">
-                <a class="navbar-brand" href="#">Ethio Scholars</a>
+                <a class="navbar-brand text-dark" href="#">Ethio Scholars</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+              <div class="collapse navbar-collapse text-dark" id="navbarSupportedContent-333">
                 <ul class="navbar-nav ml-auto">
                      
                    <li class="nav-item <?php if($active=="home") echo "active"?>">
-                      <a class="nav-link" href="home">Home
+                      <a class="nav-link text-dark" href="home">Home
                       <span class="sr-only">(current)</span>
                       </a>
                   </li>
                   
                   <li class="nav-item <?php if($active=="services") echo "active"?>">
-                      <a class="nav-link" href="service.php">Services</a>
+                      <a class="nav-link text-dark" href="service.php">Services</a>
                   </li>
                  <?php if($role == "user" || $role == "enterprise"){ ?>
                   <li class="nav-item <?php if($active=="researches") echo "active"?>">
-                      <a class="nav-link" href="researches.php">Researches</a>
+                      <a class="nav-link text-dark" href="researches.php">Researches</a>
                   </li>
 
                  <?php } ?>
                   <?php if($role == "indpendentresearcher" || $role == "university"){ ?>
                   <li class="nav-item <?php if($active=="upload") echo "active"?>">
-                      <a class="nav-link" href="upload.php">Upload</a>
+                      <a class="nav-link text-dark" href="upload.php">Upload</a>
                   </li>
                   <li class="nav-item <?php if($active=="grant") echo "active"?>">
-                      <a class="nav-link" href="grant.php">Grant</a>
+                      <a class="nav-link text-dark" href="grant.php">Grant</a>
                   </li>
                   
                  <?php } ?>
                   <li class="nav-item <?php if($active=="team") echo "active"?>">
-                      <a class="nav-link" href="team.php">Team</a>
+                      <a class="nav-link text-dark" href="team.php">Team</a>
                   </li>
+                  
                   <li class="nav-item dropdown">
+                     
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-user"></i>
+                       <i class="fas fa-user"></i>
+                      <?php echo $username; ?> 
+                       
                     </a>
+                      
+                           
                     <div class="dropdown-menu dropdown-menu-right dropdown-default"
                       aria-labelledby="navbarDropdownMenuLink-333">
                         
                       <a class="dropdown-item" href="setting.php">Change Password</a>
                       <a class="dropdown-item" href="logout.php">logout</a>
-                      <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                      
                     </div>
                   </li>
+<!--                  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i> Profile </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+          <a class="dropdown-item" href="#">My account</a>
+          <a class="dropdown-item" href="#">Log out</a>
+        </div>-->
+      </li>
+
+
+
                 </ul>
                 
               </div>

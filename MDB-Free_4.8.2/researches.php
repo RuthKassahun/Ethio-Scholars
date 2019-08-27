@@ -4,20 +4,33 @@
  ?>  <?php
 
 include ('../controller/db.php');  
+if(isset($_GET['search']) && $_GET['search']==""){
+    $sql= "SELECT * FROM documents";
+}
+if(isset($_GET['search'])){
+    $sql= "SELECT * FROM documents WHERE title like '%$_GET[search]%'";
+}else{
+    $sql= "SELECT * FROM documents";
+}
 
-
-$sql= "SELECT * FROM documents";
 
 $res= mysqli_query($con,$sql);
 
 ?>
 
 
-
+<div class="container d-flex justify-content-end mt-3">
+    <form class="form-inline" style="width: 400px;  margin-left: 10px; margin-right: 20px; margin-top: 20px;" method="GET" action="researches.php">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input name="search" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+          aria-label="Search">
+      </form>
+</div>
 <?php
 
 while ($row = mysqli_fetch_array($res)){
     $id=$row['paperid'];
+    
     $name=$row['title'];
     
     $dept=$row['dept'];
@@ -30,6 +43,7 @@ while ($row = mysqli_fetch_array($res)){
     
 //    echo $id. "" . $name . "<a href='download.php?dow=$path'>Download</a><br>";
 ?>
+
         <?php
 echo '
     <div class="d-flex justify-content-center">

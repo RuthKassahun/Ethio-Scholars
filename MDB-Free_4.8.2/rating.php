@@ -1,4 +1,14 @@
+         <?php
+          $active = "reserches";
+           include_once './template/header.php';
+           $paperId = $_GET['id'];
+            
+              
+        ?> 
+
 <?php
+$output = 0;
+
 include_once("../controller/db.php");
 //
 //if(isset($_POST['subRate'])){
@@ -11,58 +21,47 @@ include_once("../controller/db.php");
 
 
 
+
 if(isset($_POST['subRate'])){
+   
+//   $paperId = $_GET['id'];
+//                 $id_new=$_SESSION['id_new'];
+//  echo '<script>alert('.$paperId.')</script>';
     
-    $paperId = 26;
- $accId = 23;
+      $accId= $_SESSION['accountId'];
+      $username=$_SESSION['username'];
+    
      $comment = $_POST['comment'];
-$ratingnumber = $_POST['rating'];
-$username='sel';
+   $ratingnumber = $_POST['rating'];
+ 
   
  $query=  mysqli_query($con,"INSERT INTO rating (accId,paperId,feedback,ratingnumber,username) values ('$accId','$paperId','$comment','$ratingnumber','$username')");
  
  if($query){
      
-     
-     echo 'Succesfully submitted';
+    $output= 1; 
+    
  }
  else{
-     echo 'Not added to database';
+     $output = 2;
  }
-       
-}
+    }      
+
 
 
 
 ?>
 
-
-<!DOCTYPE html>
-<html>
-     <head>
-        
-   
-
-
- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
-         
    
         <style>
-/*            body{
-                background-color: white;
-            }*/
+            body{
+                background-color: whitesmoke;
+            }
             /*shows the stars side by side, centered, and in reverse order than the HMTL*/
+            h5{
+                /*background-color: white;*/
+                
+            }
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -117,11 +116,11 @@ $username='sel';
 }
         </style>
     </head>
-    <body>
+   
         
         <div class="d-flex justify-content-center" style="margin:100px;">
           
-                <form action="rating.php" method="post">
+            <form action="rating.php?id=<?php echo $paperId;?>" method="post">
                       <h2>Rate this Research Paper</h2>
             <div class="rating">
                 
@@ -138,16 +137,24 @@ $username='sel';
             </div>
                     -->
                <div class="form-group shadow-textarea">
-  <label for="exampleFormControlTextarea6">Your Comment</label>
-  <textarea class="form-control z-depth-1" name="comment" id="exampleFormControlTextarea6" rows="7" placeholder="Write your comment here..."></textarea>
+                   <label for="exampleFormControlTextarea6"><h5 style="color:black;">Your Comment</h5></label>
+                   <textarea class="form-control z-depth-1" name="comment" required id="exampleFormControlTextarea6" rows="7" placeholder="Write your comment here..."></textarea>
 </div>     
                     
                     
                     
                  <div class="form-group">
-                 <button type="submit" name="subRate" class="btn btn-grey" id="saveReview">Save Review</button> 
+                 <button type="submit" name="subRate" class="btn btn-light" id="saveReview">Save Review</button>
+                 <?php if($output==1){?>
+                  <p class="text-success">Successfully Submitted</p>
+                 <?php }?>
+                 <?php if($output==2){?>
+                  <p class="text-danger">Invalid Input</p>
+                 <?php }?>
                  </div>
                     </form>
             </div>
-    </body>
-</html>
+         <?php
+       include_once './template/footer.php';
+        ?> 
+       

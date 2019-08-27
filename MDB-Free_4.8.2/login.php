@@ -12,6 +12,8 @@ if($result== -1){
 }else{
     session_start();
     $_SESSION['role'] = $result['role'];
+    $_SESSION['accountId']=$result['accountId'];
+    $_SESSION['username']=$result['username'];
     header("Location: home.php");
 } 
   
@@ -31,7 +33,7 @@ and open the template in the editor.-->
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Ethio-Scholar</title>
    <!--Font Awesome--> 
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
    <!--Bootstrap core CSS--> 
@@ -41,6 +43,9 @@ and open the template in the editor.-->
    <!--Your custom styles (optional)--> 
   <link href="css/style.css" rel="stylesheet">
   <style>
+      body{
+          background-color: whitesmoke;
+      }
       .form-simple .font-small {
 font-size: 0.8rem; }
 
@@ -85,24 +90,24 @@ a{
        <div class="card">
        <div class="header pt-3 grey lighten-2">
         <div class="row d-flex justify-content-start">
-            <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Log in</h3>
+            <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Login</h3>
         </div>
        </div>
-           <form action=login.php method="POST">
+           <form style="height: 400px; "action=login.php method="POST">
              <div class="card-body mx-4 mt-4">
            
                 
             <div class="md-form">
-                <input type="text" id="Form-username" class="form-control" name="username">
+                <input type="text" id="Form-username" class="form-control" name="username" required>
             <label for="Form-username">Your Username</label>
             </div>
              <div class="md-form">
-                 <input type="password" id="Form-pass4" class="form-control" name="password">
+                 <input type="password" id="Form-pass4" class="form-control" name="password" required>
             <label for="Form-pass4">Your password</label>
              </div>
                  
             <div class="text-center mb-4">
-            <button class="btn btn-white" type="submit" name="submit">Login</button>
+                <button class="btn btn-white" style="margin-top: 40px;" type="submit" name="submit">Login</button>
             <p class="text-danger"><?php echo $output;?></p>
             
             <!--<button type="button" class="btn btn-white">Log in</button>--> 
