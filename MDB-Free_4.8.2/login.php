@@ -88,7 +88,7 @@ a{
        <div class="d-flex justify-content-center">
         <section class="form-simple">
        <div class="card">
-       <div class="header pt-3 grey lighten-2">
+       <div class="header pt-3 amber lighten-2">
         <div class="row d-flex justify-content-start">
             <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Login</h3>
         </div>
@@ -107,7 +107,7 @@ a{
              </div>
                  
             <div class="text-center mb-4">
-                <button class="btn btn-white" style="margin-top: 40px;" type="submit" name="submit">Login</button>
+                <button class="btn btn-warning-color-dark" style="margin-top: 40px; background-color: #ffc107;" type="submit" name="submit">Login</button>
             <p class="text-danger"><?php echo $output;?></p>
             
             <!--<button type="button" class="btn btn-white">Log in</button>--> 

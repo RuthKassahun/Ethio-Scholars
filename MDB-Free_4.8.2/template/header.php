@@ -170,14 +170,15 @@ and open the template in the editor.-->
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                       aria-haspopup="true" aria-expanded="false">
                        <i class="fas fa-user"></i>
-                      <?php echo $username; ?> 
                        
+                        <?php echo $username; ?>
                     </a>
                       
                            
                     <div class="dropdown-menu dropdown-menu-right dropdown-default"
                       aria-labelledby="navbarDropdownMenuLink-333">
-                        
+                        <!--<a class="dropdown-item"style="margin-left:10px;" href="setting.php">Signed in as</a>--> 
+                     
                       <a class="dropdown-item" href="setting.php">Change Password</a>
                       <a class="dropdown-item" href="logout.php">logout</a>
                       
