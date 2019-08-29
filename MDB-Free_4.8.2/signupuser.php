@@ -47,6 +47,7 @@ and open the template in the editor.
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
+   <link rel="icon" type="image/png" href="logo.PNG"/>
   <!-- Font Awesome -->
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
   <!-- Bootstrap core CSS -->
@@ -58,15 +59,12 @@ and open the template in the editor.
   <style>
       body{
           background-color: whitesmoke;
+          margin-top: 30px;
       }
-     .signup{
-              /*width: 300px;*/
-                /*height: 100%;*/
-                /*background-color: buttonface;*/
-                alignment-adjust: central;
-           /*margin: 0px 40px 60px 20px;*/
-           padding: 30px;
-      }
+      p{
+    color: #ffc107;
+}
+    
       a{
           color: black;
          
@@ -88,13 +86,13 @@ and open the template in the editor.
     
     <body>
         <!--<button class="button buttonback"><a href="landingpage.php">Back</a></button>-->
-        <div class="signup">
+      
          <div class="d-flex justify-content-center"> 
        <!-- Default form register -->
        <form></form>
-       <form action="signupuser.php" style="background-color: white; width: 50%;"method="post" class="text-center border border-light p-5">
+       <form action="signupuser.php" style="background-color: white; width: 50%; margin-top: 10px;"method="post" class="text-center border border-light p-5">
 
-    <p class="h4 mb-4">Sign up</p>
+    <p class="h4 mb-4">User Sign up</p>
 
     <div class="form-row mb-4">
         <div class="col">
@@ -142,12 +140,12 @@ and open the template in the editor.
        
     </small>
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
-     <button class="btn btn-white" style="margin-top: 30px;"type="submit" name="submit">SIGN UP</button>
+     <button class="btn btn-warning-color-dark" style="margin-top: 0; background-color: #ffc107;"type="submit" name="submit">SIGN UP</button>
       <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
        
    </form>
          </div>    
-        </div>
+     
       
          <!-- SCRIPTS -->
   <!-- JQuery -->

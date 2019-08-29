@@ -16,7 +16,8 @@ $sql= "SELECT * FROM rating where paperId='".$paperId."'";
 $res= mysqli_query($con,$sql);
 
  if($res){
-//     echo 'Succesfully fetsched';
+//  echo 'Succesfully fetsched';
+//    header("Location: researches.php");
  }
  else{
      echo 'Please try again';

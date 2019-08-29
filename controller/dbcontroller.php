@@ -40,12 +40,12 @@ public function getPeperId($username, $password){
         return $row['accountId'];
         
 }
-public function enterprisesignup($companyname,$companyemail,$location,$companywebsite,$fax,$postbox,$companyphone1,
-        $companyphone2,$companyphone3,$fullname,$position,$address,$email,$accId){
-         $stm= $this->conn->prepare("insert into enterprise(companyname,companyemail,location,companywebsite,fax,postbox,companyphone1,
-        companyphone2,companyphone3,fullname,position,address,email,accId) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
-         $stm->bind_param("ssssssssssssss",$companyname,$companyemail,$location,$companywebsite,$fax,$postbox,$companyphone1,
-        $companyphone2,$companyphone3,$fullname,$position,$address,$email,$accId);
+public function enterprisesignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
+        $institutionphone2,$firstname,$lastname,$position,$address,$email,$accId){
+         $stm= $this->conn->prepare(" insert into enterprise(institutionname,institutionemail,location,insititutionwebsite,fax,postbox,insititutionphone1,
+        insititutionphone2,firstname,lastname,position,address,email,accId) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+         $stm->bind_param("ssssssssssssss",$institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
+        $institutionphone2,$firstname,$lastname,$position,$address,$email,$accId);
          if($stm->execute()){
              return 1;
              
@@ -114,11 +114,11 @@ public function indpendentresearchersignup($firstname,$lastname,$email,$phonenum
         }
 //      
         public function universitysignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
-        $institutionphone2,$institutionphone3,$fullname,$position,$address,$email,$accId){
+        $institutionphone2,$firstname,$lastname,$position,$address,$email,$accId){
          $stm= $this->conn->prepare(" insert into university(institutionname,institutionemail,location,insititutionwebsite,fax,postbox,insititutionphone1,
-        insititutionphone2,insititutionphone3,fullname,position,address,email,accId) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+        insititutionphone2,firstname,lastname,position,address,email,accId) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
          $stm->bind_param("ssssssssssssss",$institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
-        $institutionphone2,$institutionphone3,$fullname,$position,$address,$email,$accId);
+        $institutionphone2,$firstname,$lastname,$position,$address,$email,$accId);
          if($stm->execute()){
              return 1;
             

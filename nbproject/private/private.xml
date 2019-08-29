@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/researches.php</file>
-            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/grant.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/login.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/signupresearcher.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/signupuser.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/rating.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/rateuser.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/signupuniversity.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/enterpriseSignup.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/controller/dbcontroller.php</file>
+            <file>file:/C:/wamp64/www/Ethio-Scholars/MDB-Free_4.8.2/signupwith.php</file>
         </group>
     </open-files>
 </project-private>

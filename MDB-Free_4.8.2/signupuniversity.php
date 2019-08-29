@@ -1,5 +1,8 @@
 <?php
-$output='';
+$output= '';
+$output2= '';
+$output3= '';
+
 include_once '../controller/dbcontroller.php';
 if(isset($_POST['submit'])){
 $institutionname=$_POST['institutionname'];
@@ -10,8 +13,9 @@ $fax=$_POST['fax'];
 $postbox=$_POST['postbox'];
 $institutionphone1=$_POST['institutionphone1'];
 $institutionphone2=$_POST['institutionphone2'];
-$institutionphone3=$_POST['institutionphone3'];
-$fullname=$_POST['fullname'];
+//$institutionphone3=$_POST['institutionphone3'];
+$firstname=$_POST['firstname'];
+$lastname=$_POST['lastname'];
 $position=$_POST['position'];
 $address=$_POST['address'];
 $email=$_POST['email'];
@@ -23,13 +27,21 @@ $result=$db->adduniversity_pass($username,$password);
 if($result=='1'){
     $accId = $db->getId($username,$password);
     $result=$db->universitysignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,
-        $postbox,$institutionphone1,$institutionphone2,$institutionphone3,$fullname,$position,$address,$email,$accId);
-//    echo 'University Successfully signup';
-    header("Location: login.php");
+        $postbox,$institutionphone1,$institutionphone2,$firstname,$lastname,$position,$address,$email,$accId);
+
+  $output2='Successfully signup now you can';
+  ?>
+
+      <?php
+      $output3='here';
+   
+//    header("Location: login.php");
 }else{
   $output =  'Username already taken Please try again';
 } 
 }
+
+ 
     
 ?>
 
@@ -41,6 +53,7 @@ if($result=='1'){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
+   <link rel="icon" type="image/png" href="logo.PNG"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -70,7 +83,7 @@ if($result=='1'){
         margin-top: 50px;
     }
     div.img:hover {
-        border: 1px solid #777;
+        border: 1px solid #ffc107;
     }
     
     div.img img {
@@ -97,7 +110,7 @@ if($result=='1'){
 }
  a{
           color: black;
-         
+         hover:#ffc107;
       }
       a:hover {
     color: darkgray;
@@ -109,6 +122,13 @@ if($result=='1'){
     margin-left: 1550px;
     padding-top: 15px;
 }
+p{
+    color: #ffc107;
+}
+input:focus{
+    border-color: #ffc107 !important;
+   
+}
     </style>
 </head>
 
@@ -116,7 +136,7 @@ if($result=='1'){
     <div class="d-flex justify-content-center">
     <form class="text-center border border-light p-5" style="margin-top: 40px; margin-bottom: 80px; background-color: white;" action="signupuniversity.php" method="post">
 
-        <p class="h4 mb-4">Sign up</p>
+        <p class="h4 mb-4">University Sign up</p>
         <fieldset>
                 <legend>University Information</legend>
         <div class="form-row mb-4">
@@ -150,40 +170,41 @@ if($result=='1'){
         <div class="form-row mb-4">
                 <div class="col">
                     <!-- First name -->
-      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Fax" name="fax" required>
+      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Fax" name="fax">
                 </div>
                 
                 <div class="col">
-                        <!-- Last name -->
-       <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" PO Box" name="postbox" required>
+                        
+       <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" PO Box" name="postbox">
          </div>
             </div>
 
             <div class="form-row mb-4">
                     <div class="col">
-                        <!-- First name -->
+                        
        <input type="number" id="defaultRegisterFormFirstName" class="form-control" placeholder="Inistitution Phone 1" name="institutionphone1" required>
                     </div>
                     
                     <div class="col">
-                            <!-- Last name -->
-       <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Inistitution Phone 2" name="institutionphone2" required>
+                            
+       <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Inistitution Phone 2" name="institutionphone2">
              </div>
-             <div class="col">
-                    <!-- Last name -->
-       <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Inistitution Phone 3" name="institutionphone3" required>
-              </div>
+             
               </div>
 <hr>
 
                     <fieldset>
                   <legend>Employee Information</legend>
+                  <p>(An Employee is a person represented by the university to upload a research paper) </p>
               <div class="form-row mb-4">
-              <div class="col">
+                  <div class="col" style="border-color:">
                   <!-- First name -->
-                  <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Full name" name="fullname" required>
+                  <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" name="firstname" required>
               </div>
-
+               <div class="col">
+                  <!-- last name -->
+                  <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Last name" name="lastname" required>
+              </div>
 
                    </div>
                    </fieldset>
@@ -191,7 +212,7 @@ if($result=='1'){
             <div class="form-row mb-4">
                 <div class="col">
                     <!-- First name -->
-         <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="position" name="position" required>
+         <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Position" name="position" required>
                 </div>
 
             </div>
@@ -216,6 +237,7 @@ if($result=='1'){
                 <!-- First name -->
                 <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Username" name="username" required>
             <p class="text-danger"><?php echo $output;?></p>
+              
             </div>
          
             
@@ -226,7 +248,8 @@ if($result=='1'){
 
         </div>
     
-          <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+<button class="btn btn-outline-warning"  type="submit" name="submit">SIGN UP</button>
+                <p class="text-success"><?php echo $output2 .'<a href="../MDB-Free_4.8.2/login.php" class="dark-gray-text font-weight-bold ml-1">Login</a>'.$output3;?></p>
           <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
     </form>
         </div>

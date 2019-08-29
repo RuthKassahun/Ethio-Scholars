@@ -144,15 +144,18 @@ if(isset($_POST['subRate'])){
                     
                     
                  <div class="form-group">
-                 <button type="submit" name="subRate" class="btn btn-light" id="saveReview">Save Review</button>
+                     <button type="submit" name="subRate" class="btn btn-light" id="saveReview">Save Review</button>
+                     
                  <?php if($output==1){?>
                   <p class="text-success">Successfully Submitted</p>
                  <?php }?>
                  <?php if($output==2){?>
                   <p class="text-danger">Invalid Input</p>
                  <?php }?>
+                 
                  </div>
-                    </form>
+                     </form>
+             
             </div>
          <?php
        include_once './template/footer.php';

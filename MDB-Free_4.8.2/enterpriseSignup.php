@@ -11,7 +11,8 @@ $postbox=$_POST['postbox'];
 $companyphone1=$_POST['companyphone1'];
 $companyphone2=$_POST['companyphone2'];
 $companyphone3=$_POST['companyphone3'];
-$fullname=$_POST['fullname'];
+$firstname=$_POST['firstname'];
+$lastname=$_POST['lastname'];
 $position=$_POST['position'];
 $address=$_POST['address'];
 $email=$_POST['email'];
@@ -24,9 +25,9 @@ $db=new dbcontroller();
 if($result=='1'){
     $accId = $db->getId($username,$password);
   $db->enterprisesignup($companyname,$companyemail,$location,$companywebsite,$fax,
-        $postbox,$companyphone1,$companyphone2,$companyphone3,$fullname,$position,$address,$email,$accId);
-       header("Location: login.php"); 
-//    echo 'Enterprise Successfully signup';
+        $postbox,$companyphone1,$companyphone2,$companyphone3,$firstname,$lastname,$position,$address,$email,$accId);
+//       header("Location: login.php"); 
+   echo 'Successfully signup';
   }else{
   $output =  'Username already taken Please try again';
 } 
@@ -41,6 +42,7 @@ if($result=='1'){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
+   <link rel="icon" type="image/png" href="logo.PNG"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -53,6 +55,9 @@ if($result=='1'){
       body{
           background-color: whitesmoke;
       }
+      p{
+    color: #ffc107;
+     }
     div.img {
         margin: 20px;
         border: 1px solid #ccc;
@@ -116,7 +121,7 @@ a{
    
  <form class="text-center border border-light p-5" style="margin-top: 40px; margin-bottom: 80px; background-color: white;" action="enterpriseSignup.php" method="post">
 
-        <p class="h4 mb-4">Sign up</p>
+        <p class="h4 mb-4">Enterprise Sign up</p>
         <fieldset>
                 <legend>Company Information</legend>
         <div class="form-row mb-4">
@@ -150,12 +155,12 @@ a{
         <div class="form-row mb-4">
                 <div class="col">
                     <!-- First name -->
-                    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Fax" name="fax" required>
+                    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Fax" name="fax">
                 </div>
                 
                 <div class="col">
                         <!-- Last name -->
-                        <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" PO Box" name="postbox" required>
+                        <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" PO Box" name="postbox">
          </div>
             </div>
 
@@ -167,35 +172,36 @@ a{
                     
                     <div class="col">
                             <!-- Last name -->
-                            <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Company Phone 2" name="companyphone2" required>
-             </div>
-             <div class="col">
-                    <!-- Last name -->
-                    <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Company Phone 3" name="companyphone3" required>
-     </div>
+                            <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Company Phone 2" name="companyphone2">
+                </div>
                 </div>
                
 <hr>
 
-<fieldset>
-        <legend>Employee Information</legend>
-<div class="form-row mb-4">
-    <div class="col">
-        <!-- First name -->
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Full name" name="fullname" required>
-    </div>
-    
-  
-</div>
- </fieldset>
+            <fieldset>
+                    <legend>Employee Information</legend>
+             <p>(An Employee is a person represented by the company to upload a research paper) </p>
+            
+                          <div class="form-row mb-4">
+                          <div class="col">
+                              <!-- First name -->
+                              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" name="firstname" required>
+                          </div>
+                           <div class="col">
+                              <!-- First name -->
+                              <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Last name" name="lastname" required>
+                          </div>
 
-<div class="form-row mb-4">
-    <div class="col">
-        <!-- First name -->
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="position" name="position" required>
-    </div>
-    
-</div>
+            </div>
+             </fieldset>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- First name -->
+                    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="position" name="position" required>
+                </div>
+
+            </div>
 <div class="form-row mb-4">
         <div class="col">
             <!-- First name -->
@@ -224,7 +230,7 @@ a{
                     <input type="password" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Passoword" name="password" requireds>
      </div>
         </div>
-               <button class="btn btn-white" type="submit" name="submit">SIGN UP</button>
+               <button class="btn btn-warning-color-dark" style="margin-top: 40px; background-color: #ffc107;" type="submit" name="submit">SIGN UP</button>
                <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
        
     </form>

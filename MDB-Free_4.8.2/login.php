@@ -34,6 +34,7 @@ and open the template in the editor.-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
+   <link rel="icon" type="image/png" href="logo.PNG"/>
    <!--Font Awesome--> 
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
    <!--Bootstrap core CSS--> 
@@ -46,6 +47,9 @@ and open the template in the editor.-->
       body{
           background-color: whitesmoke;
       }
+      p{
+    color: #ffc107;
+}
       .form-simple .font-small {
 font-size: 0.8rem; }
 
@@ -88,7 +92,7 @@ a{
        <div class="d-flex justify-content-center">
         <section class="form-simple">
        <div class="card">
-       <div class="header pt-3 grey lighten-2">
+       <div class="header pt-3 amber lighten-2">
         <div class="row d-flex justify-content-start">
             <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Login</h3>
         </div>
@@ -107,7 +111,7 @@ a{
              </div>
                  
             <div class="text-center mb-4">
-                <button class="btn btn-white" style="margin-top: 40px;" type="submit" name="submit">Login</button>
+                <button class="btn btn-warning-color-dark" style="margin-top: 40px; background-color: #ffc107;" type="submit" name="submit">Login</button>
             <p class="text-danger"><?php echo $output;?></p>
             
             <!--<button type="button" class="btn btn-white">Log in</button>--> 
