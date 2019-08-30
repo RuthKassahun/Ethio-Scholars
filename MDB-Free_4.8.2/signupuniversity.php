@@ -1,9 +1,7 @@
 <?php
 $output= '';
-$output2= '';
-$output3= '';
-
 include_once '../controller/dbcontroller.php';
+$success = false;
 if(isset($_POST['submit'])){
 $institutionname=$_POST['institutionname'];
 $institutionemail=$_POST['institutionemail'];
@@ -28,14 +26,8 @@ if($result=='1'){
     $accId = $db->getId($username,$password);
     $result=$db->universitysignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,
         $postbox,$institutionphone1,$institutionphone2,$firstname,$lastname,$position,$address,$email,$accId);
+ $success = true;
 
-  $output2='Successfully signup now you can';
-  ?>
-
-      <?php
-      $output3='here';
-   
-//    header("Location: login.php");
 }else{
   $output =  'Username already taken Please try again';
 } 
@@ -53,7 +45,7 @@ if($result=='1'){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
-   <link rel="icon" type="image/png" href="logo.PNG"/>
+   <link rel="icon" type="image/png" href="logo_1.PNG"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -62,6 +54,9 @@ if($result=='1'){
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <script>
+      
+  </script>
   <style>
       body{
           padding: 2px;
@@ -134,7 +129,7 @@ input:focus{
 
 <body>
     <div class="d-flex justify-content-center">
-    <form class="text-center border border-light p-5" style="margin-top: 40px; margin-bottom: 80px; background-color: white;" action="signupuniversity.php" method="post">
+    <form class="text-center border border-light p-5" style="margin-top: 40px; margin-bottom: 80px; background-color: white;" action="#" method="post">
 
         <p class="h4 mb-4">University Sign up</p>
         <fieldset>
@@ -155,7 +150,7 @@ input:focus{
     <div class="form-row mb-4">
             <div class="col">
                 <!-- First name -->
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Location" name="location" required>
+        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Address" name="location" required>
             </div>
             
         </div>
@@ -174,21 +169,21 @@ input:focus{
                 </div>
                 
                 <div class="col">
-                        
+               
        <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" PO Box" name="postbox">
          </div>
             </div>
-
+        <small>Phone Format: 123-456-7890</small>
             <div class="form-row mb-4">
+               
                     <div class="col">
-                        
-       <input type="number" id="defaultRegisterFormFirstName" class="form-control" placeholder="Inistitution Phone 1" name="institutionphone1" required>
+                      
+              <input type="tel" id="phone" class="form-control mb-4" placeholder="Inistitution Phone 1" name="institutionphone1" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="20" minlength="10" maxlength="14" required>              
+     
                     </div>
-                    
-                    <div class="col">
-                            
-       <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Inistitution Phone 2" name="institutionphone2">
-             </div>
+                        <div class="col">
+                        <input type="tel" id="phone" class="form-control mb-4" placeholder="Inistitution Phone 2" name="institutionphone2" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="20" minlength="10" maxlength="14">                   
+        </div>
              
               </div>
 <hr>
@@ -248,11 +243,39 @@ input:focus{
 
         </div>
     
-<button class="btn btn-outline-warning"  type="submit" name="submit">SIGN UP</button>
-                <p class="text-success"><?php echo $output2 .'<a href="../MDB-Free_4.8.2/login.php" class="dark-gray-text font-weight-bold ml-1">Login</a>'.$output3;?></p>
-          <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
+         <button class="btn btn-outline-amber" type="submit" name="submit">
+                 SIGN UP
+               </button>
+               <button id="modal" class="btn btn-outline-amber d-none" data-toggle="modal" data-target="#basicExampleModal">
+                 Model
+               </button>
+                <!--<p class="text-success"></p>-->
+          <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="./login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
     </form>
         </div>
+    
+    <!-- Modal -->
+               <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Ethio-Scholars</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body">
+                      Succesfully registered. Do you want to Login?
+                     </div>
+                     <div class="modal-footer">
+                         <button class="btn btn-grey" data-dismiss="modal">Close</button>
+                         <a href="./login.php" class="btn btn-amber">Login</a>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+     
    
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -261,6 +284,15 @@ input:focus{
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  
+<?php if($success==true){ ?>
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('#modal').click();
+       });
+  
+  <?php } ?>
+  </script>
 </body>
 
 </html>

@@ -1,6 +1,9 @@
 
 <?php 
     session_start();
+    if(!isset($_SESSION['role'])){
+        header('Location: landingPage.php');
+    }
     $role = $_SESSION['role'];
     $username=$_SESSION['username'];
     
@@ -18,7 +21,7 @@ and open the template in the editor.-->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Ethio-Scholar</title>
         <!--how to add logo-->
-        <link rel="icon" type="image/png" href="logo.PNG"/>
+        <link rel="icon" type="image/png" href="logo_1.PNG"/>
     
          <!--Font Awesome--> 
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
@@ -49,9 +52,9 @@ and open the template in the editor.-->
                 padding-left: 20px !important;
                 color: black;
             }
-            .active{
+                   .active{
                 /*background: #e65100;*/
-                background: transparent;
+                background: #ffc107 !important;
                 border-color: black;
                 border-radius: 4px;
             }
@@ -128,9 +131,9 @@ and open the template in the editor.-->
     
     <body>
             <nav class="mb-1 navbar navbar-expand-lg navbar-light cloudy-knoxville-gradient px-4">
-                <img src="./logo.PNG" height="40" class="d-inline-block align-top mr-2 logo-img"
+                <img src="./logo_1.PNG"  class="d-inline-block align-top mr-2 logo-img"
                   alt="mdb logo">
-                <a class="navbar-brand text-dark" href="#">Ethio Scholars</a>
+                <a style="color: #ffc107;"class="navbar-brand text-dark" href="#"><h3><b>Ethio-Scholars</b></h3></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -154,6 +157,10 @@ and open the template in the editor.-->
 
                  <?php } ?>
                   <?php if($role == "indpendentresearcher" || $role == "university"){ ?>
+                  <li class="nav-item <?php if($active=="view") echo "view"?>">
+                      <a class="nav-link text-dark" href="view_document.php">View</a>
+                  </li>
+
                   <li class="nav-item <?php if($active=="upload") echo "active"?>">
                       <a class="nav-link text-dark" href="upload.php">Upload</a>
                   </li>
@@ -162,8 +169,8 @@ and open the template in the editor.-->
                   </li>
                   
                  <?php } ?>
-                  <li class="nav-item <?php if($active=="team") echo "active"?>">
-                      <a class="nav-link text-dark" href="team.php">Team</a>
+                  <li class="nav-item <?php if($active=="about") echo "active"?>">
+                      <a class="nav-link text-dark" href="about.php">About</a>
                   </li>
                   
                   <li class="nav-item dropdown">

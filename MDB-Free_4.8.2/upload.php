@@ -18,7 +18,7 @@
        <!-- Default form contact -->
        <form class="text-center border border-light p-5" style="background-color: white;" action="upload.php" method="post" enctype="multipart/form-data">
 
-    <p class="h4 mb-4">Upload Paper</p>
+    <p class="h4 mb-4 amber-text">Upload Paper</p>
 
     <!-- Name -->
     <input type="text" id="defaultContactFormTitle" class="form-control mb-4" placeholder="Title" name="doc_name" required>
@@ -45,7 +45,7 @@
 
     <div class="md-form">
         <input placeholder="Published Date" type="date" id="date-picker-example" class="form-control datepicker" name="pdate" required>
-  <label for="date-picker-example">
+        <label for="date-picker-example" style="margin-top: 15px;"><h5><center>Choose Published date</center></h5>
   </label>
 </div>
 
@@ -61,7 +61,7 @@
     <label class="custom-file-label" for="inputGroupFile01" required>Choose Cover Image</label>
   </div>
 <br>
-<button class="btn btn-outline-light" style="margin-top: 30px;"type="submit" name="submit">Upload</button>
+<button class="btn btn-warning-white" style="margin-top: 30px; background-color: #ffc107;"type="submit" name="submit"><b>Upload</b></button>
 </form>
 </div>
 </div>

@@ -122,14 +122,14 @@ if(isset($_POST['subRate'])){
           
             <form action="rating.php?id=<?php echo $paperId;?>" method="post">
                       <h2>Rate this Research Paper</h2>
-            <div class="rating">
+            <div class="rating amber-text">
                 
               <!--elements are in reversed order, to allow "previous sibling selectors" in CSS-->
-              <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-              <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-              <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-              <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-              <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+              <input type="radio" name="rating" value="5" id="5"><label class="amber-text" for="5">☆</label>
+              <input type="radio" name="rating" value="4" id="4"><label class="amber-text" for="4">☆</label>
+              <input type="radio" name="rating" value="3" id="3"><label class="amber-text"  for="3">☆</label>
+              <input type="radio" name="rating" value="2" id="2"><label class="amber-text" for="2">☆</label>
+              <input type="radio" name="rating" value="1" id="1"><label class="amber-text" for="1">☆</label>
             </div>
 <!--              <div class="form-group">
             <label for="comment">Comment*</label>
@@ -137,17 +137,18 @@ if(isset($_POST['subRate'])){
             </div>
                     -->
                <div class="form-group shadow-textarea">
-                   <label for="exampleFormControlTextarea6"><h5 style="color:black;">Your Comment</h5></label>
+                   <label for="exampleFormControlTextarea6"><h5 style="color:black; background-color: white;">Your Comment</h5></label>
                    <textarea class="form-control z-depth-1" name="comment" required id="exampleFormControlTextarea6" rows="7" placeholder="Write your comment here..."></textarea>
-</div>     
+               </div>     
                     
                     
                     
                  <div class="form-group">
-                     <button type="submit" name="subRate" class="btn btn-light" id="saveReview">Save Review</button>
+                     <button type="submit" name="subRate" class="btn btn-warning-white black-text" style="background-color:#ffc107"id="saveReview">Save Review</button>
                      
                  <?php if($output==1){?>
                   <p class="text-success">Successfully Submitted</p>
+                  
                  <?php }?>
                  <?php if($output==2){?>
                   <p class="text-danger">Invalid Input</p>

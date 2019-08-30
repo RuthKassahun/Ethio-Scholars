@@ -34,7 +34,7 @@ and open the template in the editor.-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
-   <link rel="icon" type="image/png" href="logo.PNG"/>
+   <link rel="icon" type="image/png" href="logo_1.PNG"/>
    <!--Font Awesome--> 
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
    <!--Bootstrap core CSS--> 
@@ -58,20 +58,20 @@ border-top-left-radius: .3rem;
 border-top-right-radius: .3rem; }
 
 .form-simple input[type=text]:focus:not([readonly]) {
-border-bottom: 1px solid #ff3547;
--webkit-box-shadow: 0 1px 0 0 #ff3547;
+border-bottom: 1px solid #ffc107;
+-webkit-box-shadow: 0 1px 0 0 #ffc107;
 box-shadow: 0 1px 0 0 #ff3547; }
 
 .form-simple input[type=text]:focus:not([readonly]) + label {
-color: #4f4f4f; }
+color: #ffc107; }
 
 .form-simple input[type=password]:focus:not([readonly]) {
-border-bottom: 1px solid #ff3547;
--webkit-box-shadow: 0 1px 0 0 #ff3547;
-box-shadow: 0 1px 0 0 #ff3547; }
+border-bottom: 1px solid #ffc107;
+-webkit-box-shadow: 0 1px 0 0 #ffc107;
+box-shadow: 0 1px 0 0 #ffc107; }
 
 .form-simple input[type=password]:focus:not([readonly]) + label {
-color: #4f4f4f; }
+color: #ffc107; }
 .form-simple{
     width: 700px;
     height: 1000px;
@@ -79,10 +79,12 @@ color: #4f4f4f; }
            /*margin: 0px 40px 60px 20px;*/
            padding: 100px;
 }
-a{
-    color: black;
+a:link{
+    color: #ffc107;
 }
-
+a:hover{
+    color: #ffc107;
+}
 
   </style>
     </head>
@@ -92,31 +94,40 @@ a{
        <div class="d-flex justify-content-center">
         <section class="form-simple">
        <div class="card">
-       <div class="header pt-3 amber lighten-2">
-        <div class="row d-flex justify-content-start">
-            <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Login</h3>
+       <div class="header pt-3 white lighten-2">
+        <div class="row d-flex justify-content-center">
+            <img src="logo_1.png" style="width: 20%; border-radius: 50%;">
+            <h1 style="color: #ffc107" class="deep-grey-text mt-3 mb-4 pb-1 mx-5"><b>Login</b></h1>
         </div>
        </div>
            <form style="height: 400px; "action=login.php method="POST">
              <div class="card-body mx-4 mt-4">
            
                 
-            <div class="md-form">
-                <input type="text" id="Form-username" class="form-control" name="username" required>
-            <label for="Form-username">Your Username</label>
+            <div class="col input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user amber-text"></i></span>
+                 </div>
+                 
+                <input type="text" id="Form-username" class="form-control" placeholder="Your Username" name="username" required>
+            
             </div>
-             <div class="md-form">
-                 <input type="password" id="Form-pass4" class="form-control" name="password" required>
-            <label for="Form-pass4">Your password</label>
+                 </br>
+             <div class="col input-group">
+                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock amber-text"></i></span>
+                 </div>
+                 
+                 <input type="password" id="Form-pass4" class="form-control" placeholder="Your password" name="password" required>
              </div>
                  
             <div class="text-center mb-4">
-                <button class="btn btn-warning-color-dark" style="margin-top: 40px; background-color: #ffc107;" type="submit" name="submit">Login</button>
+                <button class="btn btn-warning-white" style="margin-top: 40px; background-color: #ffc107" type="submit" name="submit"><b>Login</b></button>
             <p class="text-danger"><?php echo $output;?></p>
             
             <!--<button type="button" class="btn btn-white">Log in</button>--> 
            </div>
-           <p class="font-small grey-text d-flex justify-content-center">Don't have an account? <a href="../MDB-Free_4.8.2/landingpage.php" class="dark-grey-text font-weight-bold ml-1"> Sign up</a></p>
+                 <p class="font-small grey-text d-flex justify-content-center">Don't have an account? <a href="../MDB-Free_4.8.2/landingpage.php"  class="dark-grey-text font-weight-bold ml-1"><u> Sign up</u></a></p>
             </div>
             </form>
            </div>

@@ -40,12 +40,12 @@ public function getPeperId($username, $password){
         return $row['accountId'];
         
 }
-public function enterprisesignup($institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
-        $institutionphone2,$firstname,$lastname,$position,$address,$email,$accId){
-         $stm= $this->conn->prepare(" insert into enterprise(institutionname,institutionemail,location,insititutionwebsite,fax,postbox,insititutionphone1,
-        insititutionphone2,firstname,lastname,position,address,email,accId) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
-         $stm->bind_param("ssssssssssssss",$institutionname,$institutionemail,$location,$institutionwebsite,$fax,$postbox,$institutionphone1,
-        $institutionphone2,$firstname,$lastname,$position,$address,$email,$accId);
+public function enterprisesignup($companyname,$companyemail,$location,$companywebsite,$fax,
+        $postbox,$companyphone1,$companyphone2,$firstname,$lastname,$position,$address,$email,$accId){
+         $stm= $this->conn->prepare(" insert into enterprise(companyname,companyemail,location,companywebsite,fax,
+        postbox,companyphone1,companyphone2,firstname,lastname,position,address,email,accId) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+         $stm->bind_param("ssssssssssssss",$companyname,$companyemail,$location,$companywebsite,$fax,
+        $postbox,$companyphone1,$companyphone2,$firstname,$lastname,$position,$address,$email,$accId);
          if($stm->execute()){
              return 1;
              

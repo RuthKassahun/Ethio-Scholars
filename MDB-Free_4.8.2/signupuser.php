@@ -1,6 +1,7 @@
 <?php
 $output='';
 include_once '../controller/dbcontroller.php';
+$success = false;
 if(isset($_POST['submit'])){
 $firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
@@ -20,8 +21,8 @@ $db=new dbcontroller();
 if($result=='1'){
     $accId = $db->getId($username,$password);
    $db->usersignup($firstname,$lastname,$email,$phonenumber,$address,$location,$educationallevel,$accId);
-
-    header("Location: login.php");
+   $success = true;
+//    header("Location: login.php");
      }else{
    $output =  'Username already taken Please try again'; 
 }
@@ -47,7 +48,7 @@ and open the template in the editor.
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
-   <link rel="icon" type="image/png" href="logo.PNG"/>
+   <link rel="icon" type="image/png" href="logo_1.PNG"/>
   <!-- Font Awesome -->
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
   <!-- Bootstrap core CSS -->
@@ -107,12 +108,13 @@ and open the template in the editor.
      <!--<div class="col">-->
     <!-- E-mail -->
     <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email"  required>
-    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone Number" name="phonenumber" aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-     </br>
+    <!--<label for="phone"> phone number:</label>-->
+     <small>Phone Format:  123-456-7890</small>
+    <input type="tel" id="phone" class="form-control mb-4" placeholder="Phone Number" name="phonenumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="20" minlength="10" maxlength="14" required>
      <input type="text" id="defaultRegisterFormAddress" class="form-control" placeholder="Address" name="address" required>
     <!--</div>-->
      </br>
-     <input type="text" id="defaultRegisterFormLocation" class="form-control" placeholder="Location" name="location" required>
+     <input type="text" id="defaultRegisterFormLocation" class="form-control" placeholder="Area of Study" name="location" required>
     <!--</div>-->
     </br>
     
@@ -140,12 +142,45 @@ and open the template in the editor.
        
     </small>
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
-     <button class="btn btn-warning-color-dark" style="margin-top: 0; background-color: #ffc107;"type="submit" name="submit">SIGN UP</button>
-      <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
+<!--     <button class="btn btn-outline-amber"  type="submit" name="submit">SIGN UP</button>-->
+               <button class="btn btn-outline-amber" type="submit" name="submit">
+                 SIGN UP
+               </button>
+               <button id="modal" class="btn btn-outline-amber d-none" data-toggle="modal" data-target="#basicExampleModal">
+                 Model
+               </button>
+
+      <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="./login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
        
    </form>
          </div>    
-     
+     <!--3333333333333333333333333333333333-->
+
+                    <!-- Button trigger modal -->
+                    
+                    
+              
+               <!-- Modal -->
+               <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Ethio-Scholars</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body">
+                      Succesfully registered. Do you want to Login?
+                     </div>
+                     <div class="modal-footer">
+                         <button class="btn btn-grey" data-dismiss="modal">Close</button>
+                         <a href="./login.php" class="btn btn-amber">Login</a>
+                     </div>
+                   </div>
+                 </div>
+               </div>
       
          <!-- SCRIPTS -->
   <!-- JQuery -->
@@ -156,5 +191,12 @@ and open the template in the editor.
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  <?php if($success==true){ ?>
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('#modal').click();
+       });
+  </script>
+  <?php } ?>
     </body>
 </html>

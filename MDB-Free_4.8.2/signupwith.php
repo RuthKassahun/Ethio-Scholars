@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
-   <link rel="icon" type="image/png" href="logo.PNG"/>
+   <link rel="icon" type="image/png" href="logo_1.PNG"/>
    <!--Font Awesome--> 
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> 
    <!--Bootstrap core CSS--> 
@@ -45,7 +45,7 @@ a:active {
 <div class="media">
     <img class="d-flex mr-3"  width="75px" height="75px"src="universityimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/enterpriseSignup.php">Enterprises, Corporate, Government,NGO</a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/enterpriseSignup.php"><u>Enterprises, Corporate, Government,NGO</u></a></h5>
                 Technology or Product developers,Specialist, Government in scientific roles
   </div>
 </div>
@@ -53,7 +53,7 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3" width="75px" height="75px" src="userimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupuser.php">Users</a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupuser.php"><u>Users</u></a></h5>
                  view, comment, or suggest
   </div>
   </div>
@@ -61,7 +61,7 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3" width="75px" height="75px" src="resercherimage.jpg" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupresearcher.php">Independent Researcher</a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupresearcher.php"><u>Independent Researcher</u></a></h5>
                        Student, personal data analyst
   </div>
   </div>
@@ -69,7 +69,7 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3"  width="75px" height="75px"src="universityimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupuniversity.php">University</a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupuniversity.php"><u>University</u></a></h5>
                 know universities or colleges
   </div>
   </div>

@@ -26,6 +26,8 @@ $res= mysqli_query($con,$sql);
   }
 
 ?>
+
+
 <?php
 
 while ($row = mysqli_fetch_array($res)){
@@ -36,21 +38,22 @@ while ($row = mysqli_fetch_array($res)){
 //    echo $id. "" . $name . "<a href='download.php?dow=$path'>Download</a><br>";
 ?>
         <?php
-echo '
-    <div class="media" style="margin:100px; margin-left:400px;">
+echo ' <div class="row"><div class="col-8">
+    <div class="media" style="margin:20px; margin-left:600px;">
      <img class="d-flex mr-3" width="100px" height="100px;"   src="images.jpg" alt="Generic placeholder image">
    <div class="media-body" style="margin-left:10px;">';
 
     echo '<h3> '.$username.'</h5>';
           echo '<h5>  '.$feedback.'</h5>';
           for($a=0;$a<$ratingnumber;$a++){
-      
-          echo '<label for="5">☆</label>';
+      echo'<label  class="amber-text" for="5"><h1>☆</h1></label>';
+//          echo '<label for="5">☆</label></div>';
       }
         echo '<hr>';
  echo' </div>
 </div>
-
+</div>
+</div>
 ';
      }
 ?>

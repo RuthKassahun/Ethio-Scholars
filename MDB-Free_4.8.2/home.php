@@ -20,7 +20,7 @@
 
     <!-- Grid column -->
     <div class="col-lg-5 text-center text-lg-left">
-        <img class="img-fluid" src="pic.jpg" alt="Sample image">
+        <img class="img-fluid" src="home (2).jpg" style="margin-left: 20px;" alt="Sample image">
     </div>
     <!-- Grid column -->
 
@@ -32,7 +32,7 @@
 
         <!-- Grid column -->
         <div class="col-1">
-          <i class="fas fa-share fa-lg indigo-text"></i>
+          <i class="fas fa-share fa-lg amber-text"></i>
         </div>
         <!-- Grid column -->
 
@@ -68,7 +68,7 @@
 
         <!-- Grid column -->
         <div class="col-1">
-          <i class="fas fa-share fa-lg indigo-text"></i>
+          <i class="fas fa-share fa-lg amber-text"></i>
         </div>
         <!-- Grid column -->
 
@@ -91,7 +91,7 @@ Enterprises and users can download any research paper they are looking for.
 
         <!-- Grid column -->
         <div class="col-1">
-          <i class="fas fa-share fa-lg indigo-text"></i>
+          <i class="fas fa-share fa-lg amber-text"></i>
         </div>
         <!-- Grid column -->
 

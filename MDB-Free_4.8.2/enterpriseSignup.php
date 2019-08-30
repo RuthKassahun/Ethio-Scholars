@@ -1,6 +1,7 @@
 <?php
 $output='';
 include_once '../controller/dbcontroller.php';
+$success = false;
 if(isset($_POST['submit'])){
 $companyname=$_POST['companyname'];
 $companyemail=$_POST['companyemail'];
@@ -10,7 +11,6 @@ $fax=$_POST['fax'];
 $postbox=$_POST['postbox'];
 $companyphone1=$_POST['companyphone1'];
 $companyphone2=$_POST['companyphone2'];
-$companyphone3=$_POST['companyphone3'];
 $firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
 $position=$_POST['position'];
@@ -25,9 +25,9 @@ $db=new dbcontroller();
 if($result=='1'){
     $accId = $db->getId($username,$password);
   $db->enterprisesignup($companyname,$companyemail,$location,$companywebsite,$fax,
-        $postbox,$companyphone1,$companyphone2,$companyphone3,$firstname,$lastname,$position,$address,$email,$accId);
-//       header("Location: login.php"); 
-   echo 'Successfully signup';
+        $postbox,$companyphone1,$companyphone2,$firstname,$lastname,$position,$address,$email,$accId);
+   $success = true;
+
   }else{
   $output =  'Username already taken Please try again';
 } 
@@ -42,7 +42,7 @@ if($result=='1'){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Ethio-Scholar</title>
-   <link rel="icon" type="image/png" href="logo.PNG"/>
+   <link rel="icon" type="image/png" href="logo_1.PNG"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -140,7 +140,7 @@ a{
     <div class="form-row mb-4">
             <div class="col">
                 <!-- First name -->
-                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Location" name="location" required>
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Address" name="location" required>
             </div>
             
         </div>
@@ -163,18 +163,32 @@ a{
                         <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" PO Box" name="postbox">
          </div>
             </div>
-
+           <small>Phone Format: 123-456-7890</small>
             <div class="form-row mb-4">
+               
                     <div class="col">
-                        <!-- First name -->
+                      
+              <input type="tel" id="phone" class="form-control mb-4" placeholder="Company Phone 1" name="companyphone1" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="20" minlength="10" maxlength="14" required>              
+     
+                    </div>
+                        <div class="col">
+                        <input type="tel" id="phone" class="form-control mb-4" placeholder="Company Phone 2" name="companyphone2" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="20" minlength="10" maxlength="14">                   
+                    </div>
+             
+              </div>
+        
+        
+<!--            <div class="form-row mb-4">
+                    <div class="col">
+                         First name 
                         <input type="number" id="defaultRegisterFormFirstName" class="form-control" placeholder="Company Phone 1" name="companyphone1" required>
                     </div>
                     
                     <div class="col">
-                            <!-- Last name -->
+                             Last name 
                             <input type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder=" Company Phone 2" name="companyphone2">
                 </div>
-                </div>
+                </div>-->
                
 <hr>
 
@@ -198,7 +212,7 @@ a{
             <div class="form-row mb-4">
                 <div class="col">
                     <!-- First name -->
-                    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="position" name="position" required>
+                    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Position" name="position" required>
                 </div>
 
             </div>
@@ -230,11 +244,39 @@ a{
                     <input type="password" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Passoword" name="password" requireds>
      </div>
         </div>
-               <button class="btn btn-warning-color-dark" style="margin-top: 40px; background-color: #ffc107;" type="submit" name="submit">SIGN UP</button>
+              <button class="btn btn-outline-amber" type="submit" name="submit">
+                 SIGN UP
+               </button>
+               <button id="modal" class="btn btn-outline-amber d-none" data-toggle="modal" data-target="#basicExampleModal">
+                 Model
+               </button>
                <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="../MDB-Free_4.8.2/login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
        
     </form>
         </div>
+    
+    
+               <!-- Modal -->
+               <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Ethio-Scholars</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                     </div>
+                     <div class="modal-body">
+                      Succesfully registered. Do you want to Login?
+                     </div>
+                     <div class="modal-footer">
+                         <button class="btn btn-grey" data-dismiss="modal">Close</button>
+                         <a href="./login.php" class="btn btn-amber">Login</a>
+                     </div>
+                   </div>
+                 </div>
+               </div>
     
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
@@ -243,6 +285,13 @@ a{
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  <?php if($success==true){ ?>
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('#modal').click();
+       });
+  </script>
+  <?php } ?>
 </body>
 
 </html>

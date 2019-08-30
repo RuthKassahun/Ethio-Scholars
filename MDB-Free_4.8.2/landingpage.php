@@ -11,7 +11,8 @@ and open the template in the editor.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Ethio-Scholar</title>
+  <title>Ethio-Scholars</title>
+  <link rel="icon" type="image/png" href="logo_1.PNG"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -108,6 +109,9 @@ a:hover{
 .team{
    margin-left: 25px;  
 }
+h1{
+    /*color: #ffc107;*/
+}
   </style>
   <script>
       // Animations init
@@ -130,11 +134,14 @@ new WOW().init();
                 <div class="row">
                   <!--Grid column-->
                   <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s" >
-                    <h1 class="h1-responsive font-weight-bold mt-sm-5">ETHIO SCHOLARS</h1>
-                    <hr class="hr-light">
-                    <h4 class="mb-4">We made it easy for you to get <b>novel reasearch paper </b>.The Research paper you have been looking for is a <b>click away</b>. Sign Up Now!</h4>
-                    <a class="btn btn-white" style="margin-left:70px;" href="../MDB-Free_4.8.2/signupwith.php">SIGN UP</a>
-                    <a class="btn btn-white" href="../MDB-Free_4.8.2/login.php">LOGIN</a>
+                       <!--<img src="logo.PNG" style="width: 30%; border-radius: 50%;">-->
+                    <h1 class="h1-responsive font-weight-bold mt-sm-5">ETHIO-SCHOLARS</h1>
+                     <hr class="hr-light">
+                     <h4 class="mb-4">We made it easy for you to get <b>novel reasearch paper </b>.The Research paper you have been looking for is a <b>click away</b>. Sign Up Now!</h4>
+                    </br>
+                     
+                     <a class="btn btn-outline-warning" style="margin-left:100px;" href="../MDB-Free_4.8.2/signupwith.php">SIGN UP</a>
+                    <a class="btn btn-outline-warning"  href="../MDB-Free_4.8.2/login.php">LOGIN</a>
                   </div>
 <!--                  <div class="link">
                   <a href="home.php">Home</a> 
