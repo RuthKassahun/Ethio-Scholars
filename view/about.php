@@ -187,7 +187,7 @@ include_once './template/header.php';
         <div class="card-body card-body-cascade text-center white">
 
             <!-- Title -->
-            <h4 class="card-title"><strong>Tamralech Yihune</strong></h4>
+            <h4 class="card-title"><strong>Tamiralech Yehunie</strong></h4>
             <!-- Subtitle -->
             <h6 class="font-weight-bold grey-text py-2">Database Adminstrator</h6>
             <!-- Text -->

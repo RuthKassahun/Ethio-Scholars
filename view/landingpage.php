@@ -140,8 +140,8 @@ new WOW().init();
                      <h4 class="mb-4">We made it easy for you to get <b>novel reasearch paper </b>.The Research paper you have been looking for is a <b>click away</b>. Sign Up Now!</h4>
                     </br>
                      
-                     <a class="btn btn-outline-warning" style="margin-left:100px;" href="../MDB-Free_4.8.2/signupwith.php">SIGN UP</a>
-                    <a class="btn btn-outline-warning"  href="../MDB-Free_4.8.2/login.php">LOGIN</a>
+                     <a class="btn btn-outline-warning" style="margin-left:100px;" href="./signupwith.php">SIGN UP</a>
+                    <a class="btn btn-outline-warning"  href="./login.php">LOGIN</a>
                   </div>
 <!--                  <div class="link">
                   <a href="home.php">Home</a> 

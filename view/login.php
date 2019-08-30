@@ -127,7 +127,7 @@ a:hover{
             
             <!--<button type="button" class="btn btn-white">Log in</button>--> 
            </div>
-                 <p class="font-small grey-text d-flex justify-content-center">Don't have an account? <a href="../MDB-Free_4.8.2/landingpage.php"  class="dark-grey-text font-weight-bold ml-1"><u> Sign up</u></a></p>
+                 <p class="font-small grey-text d-flex justify-content-center">Don't have an account? <a href="view/landingpage.php"  class="dark-grey-text font-weight-bold ml-1"><u> Sign up</u></a></p>
             </div>
             </form>
            </div>

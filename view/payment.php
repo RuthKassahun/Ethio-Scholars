@@ -8,7 +8,7 @@
               <form action="./payment-instruction.php"class="text-center border border-light p-5" method="post"style="margin-right: 300px; margin-left: 300px; margin-top: 50px;"action="payment-instruction.php">
               <p class="h4 mb-4">Payment Details</p>
                   <fieldset>
-                      <!--  <button type="button" class="btn btn-white">--><img src="../MDB-Free_4.8.2/img/images/CBE-logo.jpg" width="150px" height="150px"></button>
+                      <!--  <button type="button" class="btn btn-white">--><img src="view/img/images/CBE-Logo.jpg" width="150px" height="150px"></button>
                       <P><b>CBE</b></P>
                       <p>Payment Details your's Selection CBE </p>
                   <div class="form-row mb-4">

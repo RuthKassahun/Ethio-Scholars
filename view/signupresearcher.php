@@ -1,5 +1,5 @@
 <?php
-$output='';
+$output = "";
 include_once '../controller/dbcontroller.php';
 $success = false;
 if(isset($_POST['submit'])){
@@ -15,27 +15,20 @@ $password=$_POST['password'];
 
   
 $db=new dbcontroller();
-  $result=$db->adduser_pass($username,$password);
+$result=$db->addindpendentresearcher_pass($username,$password);
 
        
 if($result=='1'){
     $accId = $db->getId($username,$password);
-   $db->usersignup($firstname,$lastname,$email,$phonenumber,$address,$location,$educationallevel,$accId);
+   $db->indpendentresearchersignup($firstname,$lastname,$email,$phonenumber,$address,$location,$educationallevel,$accId);
    $success = true;
-//    header("Location: login.php");
-     }else{
-   $output =  'Username already taken Please try again'; 
+
+  }else{
+ 
+      $output =  'Username already taken Please try again';
 }
 }
 ?>
- <?php
-//function phpAlert($msg) {
-//   echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-//   $msg="Sucessfully login";
-//}
-?>
-
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -59,18 +52,17 @@ and open the template in the editor.
   <link href="css/style.css" rel="stylesheet">
   <style>
       body{
-          background-color: whitesmoke;
-          margin-top: 30px;
-      }
-      p{
+            background-color: whitesmoke;
+             margin-top: 30px;
+            }
+            p{
     color: #ffc107;
-}
+     }
     
-      a{
-          color: black;
-         
-      }
-      a:hover {
+      a {
+    color: black;
+}
+a:hover{
     color: darkgray;
 }
 .buttonback {
@@ -78,22 +70,20 @@ and open the template in the editor.
     color: black;
     border: 2px solid #e7e7e7;
     margin-left: 1550px;
-    /*padding-top: 15px;*/
+    /*padding: 25px 20px 10px 10px;*/
 }
       
   </style>
     </head>
     
-    
     <body>
-        <!--<button class="button buttonback"><a href="landingpage.php">Back</a></button>-->
-      
+       
+       
          <div class="d-flex justify-content-center"> 
        <!-- Default form register -->
-       <form></form>
-       <form action="signupuser.php" style="background-color: white; width: 50%; margin-top: 10px;"method="post" class="text-center border border-light p-5">
+       <form class="text-center border border-light p-5" style="background-color: white; width: 50%;" action="signupresearcher.php" method="post">
 
-    <p class="h4 mb-4">User Sign up</p>
+    <p class="h4 mb-4">Independent Researcher Sign up</p>
 
     <div class="form-row mb-4">
         <div class="col">
@@ -107,19 +97,19 @@ and open the template in the editor.
     </div>
      <!--<div class="col">-->
     <!-- E-mail -->
-    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email"  required>
-    <!--<label for="phone"> phone number:</label>-->
-     <small>Phone Format:  123-456-7890</small>
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" required>
+    <small>Phone Format:  123-456-7890</small>
     <input type="tel" id="phone" class="form-control mb-4" placeholder="Phone Number" name="phonenumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" size="20" minlength="10" maxlength="14" required>
+<!--<input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone Number" aria-describedby="defaultRegisterFormPhoneHelpBlock" name="phonenumber" required>-->
+     </br>
      <input type="text" id="defaultRegisterFormAddress" class="form-control" placeholder="Address" name="address" required>
     <!--</div>-->
      </br>
-     <input type="text" id="defaultRegisterFormLocation" class="form-control" placeholder="Area of Study" name="location" required>
+     <input type="text" id="defaultRegisterFormLocation" class="form-control" placeholder="Area of study" name="location" required>
     <!--</div>-->
     </br>
     
-     <!-- Subject -->
-    <!--<label>Subject</label>-->
+     
     <select class="browser-default custom-select mb-4" name="educationallevel" required>
         <option value="" disabled>Choose option</option>
         <option value="" selected>Educational Level</option>
@@ -137,36 +127,31 @@ and open the template in the editor.
     <!-- Password -->
     <p class="text-danger"><?php echo $output;?></p>
      </br>
-     <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" name="password" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+     <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" required>
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-       
+      
     </small>
      <!--<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">-->
-<!--     <button class="btn btn-outline-amber"  type="submit" name="submit">SIGN UP</button>-->
-               <button class="btn btn-outline-amber" type="submit" name="submit">
+   
+    <button class="btn btn-outline-amber" type="submit" name="submit">
                  SIGN UP
                </button>
                <button id="modal" class="btn btn-outline-amber d-none" data-toggle="modal" data-target="#basicExampleModal">
                  Model
                </button>
-
+      
       <p class="font-small grey-text d-flex justify-content-center">Already have an account? <a href="./login.php" class="dark-grey-text font-weight-bold ml-1">Login</a></p>
-       
-   </form>
+        </form>
+<!-- Default form register -->
          </div>    
-     <!--3333333333333333333333333333333333-->
-
-                    <!-- Button trigger modal -->
-                    
-                    
-              
+       
                <!-- Modal -->
                <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                  aria-hidden="true">
                  <div class="modal-dialog" role="document">
                    <div class="modal-content">
                      <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel">Ethio-Scholars</h5>
+                       <h5 class="modal-title" id="exampleModalLabel">Ethio-Scholars, Independent Researcher</h5>
                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                          <span aria-hidden="true">&times;</span>
                        </button>
@@ -181,9 +166,7 @@ and open the template in the editor.
                    </div>
                  </div>
                </div>
-      
-         <!-- SCRIPTS -->
-  <!-- JQuery -->
+     
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>

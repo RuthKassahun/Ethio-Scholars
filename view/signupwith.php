@@ -45,7 +45,7 @@ a:active {
 <div class="media">
     <img class="d-flex mr-3"  width="75px" height="75px"src="universityimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/enterpriseSignup.php"><u>Enterprises, Corporate, Government,NGO</u></a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="./enterpriseSignup.php"><u>Enterprises, Corporate, Government,NGO</u></a></h5>
                 Technology or Product developers,Specialist, Government in scientific roles
   </div>
 </div>
@@ -53,7 +53,7 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3" width="75px" height="75px" src="userimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupuser.php"><u>Users</u></a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="./signupuser.php"><u>Users</u></a></h5>
                  view, comment, or suggest
   </div>
   </div>
@@ -61,7 +61,7 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3" width="75px" height="75px" src="resercherimage.jpg" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupresearcher.php"><u>Independent Researcher</u></a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="./signupresearcher.php"><u>Independent Researcher</u></a></h5>
                        Student, personal data analyst
   </div>
   </div>
@@ -69,7 +69,7 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3"  width="75px" height="75px"src="universityimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../MDB-Free_4.8.2/signupuniversity.php"><u>University</u></a></h5>
+      <h5 class="mt-0 font-weight-bold"><a href="../signupuniversity.php"><u>University</u></a></h5>
                 know universities or colleges
   </div>
   </div>
