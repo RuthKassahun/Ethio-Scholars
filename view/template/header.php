@@ -157,7 +157,7 @@ and open the template in the editor.-->
 
                  <?php } ?>
                   <?php if($role == "indpendentresearcher" || $role == "university"){ ?>
-                  <li class="nav-item <?php if($active=="view") echo "view"?>">
+                  <li class="nav-item <?php if($active=="view") echo "active"?>">
                       <a class="nav-link text-dark" href="view_document.php">View</a>
                   </li>
 

@@ -194,7 +194,7 @@ a{
 
             <fieldset>
                     <legend>Employee Information</legend>
-             <p>(An Employee is a person represented by the company to upload a research paper) </p>
+             <p>(An Employee is a person represented by the company to download a research paper) </p>
             
                           <div class="form-row mb-4">
                           <div class="col">

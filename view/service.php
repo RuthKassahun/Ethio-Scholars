@@ -7,7 +7,7 @@
         $role=$_SESSION['role'];
         ?>  
   
-          <div class="d-flex justify-content-center ">
+          <div class="d-flex justify-content-center">
             <!--<div class="card booking-card" style="width:1200px;  margin-top: 100px; margin-left: 150px;" >-->
 
             <div class="card-deck" style="margin-left: 300px; margin-right: 300px; margin-top: 100px;">
@@ -26,8 +26,8 @@
                 </div>
 
     <!--Card content-->
-    <div class="container">
-    <div class="card-body col-mp-2 row ">
+    
+    <div class="card-body col-mp-2">
 
       <!--Title-->
       <a href="upload.php"> <h4 class="card-title black-text"<center><u>UPLOAD</u></center></h4></a>
@@ -39,7 +39,7 @@
     </div>
     
 
-  
+  </div>
       <div class="card mb-4" style="width: 600px; height: 400px;">
 
     <!--Card image-->
@@ -94,17 +94,16 @@
     </div>
 
   </div>
-  
   <!-- Card -->
 
   <!-- Card -->
   
               </div>
-<!--              </div>-->
+              </div>
          
   <div class="d-flex justify-content-center">
   
-<div class="card-deck row" style="margin-left: 300px; margin-right: 300px; margin-top: 20px; ">
+<div class="card-deck" style="margin-left: 300px; margin-right: 300px; margin-top: 20px; ">
 
   <!-- Card -->
   <div class="card mb-4" style="width: 400px; height: 400px;">
@@ -135,7 +134,7 @@
  
 
   </div>
- </div>
+ 
 
               </div>
          

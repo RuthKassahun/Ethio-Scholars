@@ -69,8 +69,8 @@ a:active {
   <div class="media">
       <img class="d-flex mr-3"  width="75px" height="75px"src="universityimage.png" alt="Generic placeholder image">
   <div class="media-body">
-      <h5 class="mt-0 font-weight-bold"><a href="../signupuniversity.php"><u>University</u></a></h5>
-                know universities or colleges
+      <h5 class="mt-0 font-weight-bold"><a href="./signupuniversity.php"><u>University</u></a></h5>
+                Governmental universities
   </div>
   </div>
     </br>
